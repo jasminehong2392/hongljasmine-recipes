@@ -98,6 +98,13 @@ calories, total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated f
 
 <iframe src="assets/10-80-enrollment.html" width=800 height=600 frameBorder=0></iframe>
 
+<iframe
+  src="assets/un1_analysis.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 **Univariate Analysis**
 We looked at the distribution of number of steps('n_steps') and 
 the distribution of number of ingredients('n_ingredients')
