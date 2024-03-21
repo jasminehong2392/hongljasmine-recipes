@@ -28,14 +28,23 @@ Cleaned Dataframe Columns <br>
 
 <br>
 
+| Columns      | Datatype|
+ |:-------------|--------:|
+|id |  int64  | 
+| name      |  object  | 
+|minutes|  int64  |
+| contributor_id    |  int64 |
+|  submitted        |  datetime62[ns] |
+|  tags        |  object |
+|  nutrition   |  object |
+|  n_steps   |  object |
+|  steps   |  object |
+|  description   |  object |
+|  description   |  object |
+
 
 | Columns      | Datatype|
 |:-------------|--------:|
-|   id     |   int64|
-|name      |  object | 
-| minutes   |  int64  | 
-|contributor_id|  int64  |
-| submitted |datetime62[ns] |
 |tags|  object  |
 |nutrition|  object  |
 |n_steps  |int64|
