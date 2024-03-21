@@ -1,7 +1,7 @@
 # hongljasmine-recipes
-# My Project Title
+# Recipes
 
-by Suraj Rampure (rampure@ucsd.edu)
+by Jasmine Hong (jah041@ucsd.edu) & Shekar
 
 ***Note***: If you choose a repo name and title as uninspired as the ones here, I will be quite sad.
 
