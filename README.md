@@ -17,8 +17,8 @@ The two csv datasets we are working with are Raw Recipes and Raw Interactions. R
 Cleaned Dataframe Columns
 
 | Columns      | Datatype|
-|:-------------|--------:|
-|   id         |  int64  | 
+ |:-------------|--------:|
+|id |  int64  | 
 | minutes      |  int64  | 
 |contributor_id|  int64  |
 | submitted    |  object |
