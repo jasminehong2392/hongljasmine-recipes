@@ -14,7 +14,7 @@ Our analysis is helpful for readers who are looking for a recipe that fits their
 The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contains recipes posted since 2008
 
 
-Cleaned Dataframe Columns
+Cleaned Dataframe Columns <br>
 
 | Columns      | Datatype|
  |:-------------|--------:|
@@ -26,31 +26,31 @@ Cleaned Dataframe Columns
 |  tags        |  object |
 |  nutrition   |  object |
 
-
+<br>
 
 
 | Columns      | Datatype|
 |:-------------|--------:|
-|   id       |   int64|
-|name        |  object | 
-| minutes      |  int64  | 
+|   id     |   int64|
+|name      |  object | 
+| minutes   |  int64  | 
 |contributor_id|  int64  |
-| submitted    |datetime62[ns] |
+| submitted |datetime62[ns] |
 |tags|  object  |
 |nutrition|  object  |
-|n_steps        |int64|
-|steps          | object|
-|description     | object|
-|ingredients       | object|
-|n_ingredients     | int64|
-|ave_rating          | float64|
-|calories            | float64|
-|total fat (PDV)      | float64|
-|sugar (PDV)          |float64|
-|sodium (PDV)       | float64|
-|protein (PDV)        |  float64|
-|saturated fat (PDV)   | float64|
-|carbohydrates (PDV)    |  float64|
+|n_steps  |int64|
+|steps       | object|
+|description  | object|
+|ingredients    | object|
+|n_ingredients  | int64|
+|ave_rating     | float64|
+|calories      | float64|
+|total fat (PDV)   | float64|
+|sugar (PDV)    |float64|
+|sodium (PDV)   | float64|
+|protein (PDV)  |  float64|
+|saturated fat (PDV) | float64|
+|carbohydrates (PDV) |  float64|
 dtype: object
 
 **Recipes Dataset**
@@ -75,16 +75,17 @@ description - user provided description <p>
 'rating' : Rating given <br>
 'review' : Review text <br>
 
-Merged Datframe <br>
+<br>**Merged Datframe**<br>
 Both of the dataframes have common columns id and recipe id. In order to keep all the recipes, we merge left the two dateferames to show the corresponding rating and review for each unique recipe. 
 
 
-Duplicate columns<br>
+<br>**Duplicate column**s<br>
+
 Since the id and recipe id match up, we dropped the recipe column beccause it is uneccesssary to have duplicate values <br>
 
 The columns relevant to our question are protein, sugar, n_steps, minutes, sodium, saturated fat, minutes, total fat, sugar, and carbohydrates, recipe id. 
 
-Extracting Nutrition Column
+<br>**Extracting Nutrition Column**<br>
 We discovered that the values in the list are actually strings. 
 As a result, we converted the values into a list of floats and created individual columns for each value in the list. The added columns are 
 calories, total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV) with float data type
