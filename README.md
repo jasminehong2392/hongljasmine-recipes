@@ -1,7 +1,7 @@
 # COOKIN CALORIES
 # Recipes
 
-by Jasmine Hong (jah041@ucsd.edu) & Shekar
+by Jasmine (jah041@ucsd.edu) & Shekar
 
 
 ---
