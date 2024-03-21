@@ -1,7 +1,7 @@
 # COOKIN CALORIES
 # Recipes
 
-by Jasmine (jah041@ucsd.edu) & Shekar
+by Jasmine  & Shekar
 
 
 ---
@@ -55,7 +55,6 @@ dtype: object
 
 **Recipes Dataset**
 
-
 <p>'name' : Recipe Name <br>
 'id' : Recipe ID <br>
 'minutes' : minutes to prepare recipe <br>
@@ -67,7 +66,7 @@ dtype: object
 'steps' - text for recipe steps, in order<br>
 description - user provided description <p>
 
-**Raw interations Dataset**
+**Raw Interactions Dataset**
 
 <p>'user_id' : User ID <br>
 'recipe_id':Recipe ID <br>
@@ -75,23 +74,20 @@ description - user provided description <p>
 'rating' : Rating given <br>
 'review' : Review text <br>
 
-<br>**Merged Datframe**<br>
+**Merged Datframe**
 Both of the dataframes have common columns id and recipe id. In order to keep all the recipes, we merge left the two dateferames to show the corresponding rating and review for each unique recipe. 
 
 
-<br>**Duplicate column**s<br>
+<br>**Duplicate columns**<br>
 
 Since the id and recipe id match up, we dropped the recipe column beccause it is uneccesssary to have duplicate values <br>
 
 The columns relevant to our question are protein, sugar, n_steps, minutes, sodium, saturated fat, minutes, total fat, sugar, and carbohydrates, recipe id. 
 
-<br>**Extracting Nutrition Column**<br>
+<p>**Extracting Nutrition Column**<br>
 We discovered that the values in the list are actually strings. 
 As a result, we converted the values into a list of floats and created individual columns for each value in the list. The added columns are 
-calories, total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV) with float data type
-
-
-
+calories, total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV) with float data type<br>
 
 ---
 
