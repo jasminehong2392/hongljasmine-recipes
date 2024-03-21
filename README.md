@@ -107,15 +107,38 @@ the distribution of number of ingredients('n_ingredients')
 The distributuon is skewed right  with the max count being 8, meaning that more most recipes have n_ingredients .
 
 
-
 The distribution is skewed right with the max count being 7, meaning that most recipes have 7 steps.
 
 **Bivariate Analysis**
-We looked at 
+We looked at the relationship between <mark> number of steps<mark>
+and the amount of protein and the number of ingredients and the the number
+of steps and the number of ingredients
+
+For the  <mark> number of steps<mark> and the amount of protein there seems no be no correlation and a weak relationship. There is an apparent outlier of4356 g of protein and 4 steps. The points are mainly clustered below 1000
+g of protein. 
+
+
+For the number of ingredients and the the number
+of steps, there also seems to be no correlation and a weak relationship. 
+There is an appparent outlier at the point of 37 ingredients and 6 steps.
+
+
+**interesting aggregate**<br>
+The average,minm and max sugar content of a recipe based on the amount of steps in the recipe.
+
 
 ---
 
 ## Assessment of Missingness
+
+Missingness of 'Description'<br>
+The column 'description' is NMAR because the user might have submitted
+the recipe on a mobile device like an Iphone. Since it's a smaller screen, it's harder to write out a description. As a result, it takes more time to
+write one. Therefore, the individual chooses not to include a description<br>
+
+'Description' can become a MAR missingness if we add a new column with boolean statements of whether or not they are on a mobile device. There may be no description if the value is true. <br>
+
+Here's what a Markdown table looks like. Note that the code for this table was generated _automatically_ from a DataFrame, using
 
 Here's what a Markdown table looks like. Note that the code for this table was generated _automatically_ from a DataFrame, using
 
@@ -131,9 +154,58 @@ print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
 | Summer 2021 |       4 |
 | Fall 2021   |      55 |
 
+There is more than one column that has nan values. However, columns with 
+only one row of nan values don't have a significant impact on our 
+analysis. 
+We assume that ratings of 0 are replaced with nan because 
+the individual didn't rate the recipe at at all. As a result, there
+is not rating. 0.0 indicates that they strongly disliked the recipe which may not Including 0 would
+impact the average rating. 
+
+**'Rating' Missingness** <br>
+**Missingness of rating based on the number of steps**
+<mark>Null Hypothesis<mark> : distribution of n_steps when rating is missing is the same as the distribution of the calories 
+when rating is not missing <br>
+<mark>Alternative Hypothesis<mark>  - distribution n_steps is different when rating is missing and when rating is not <br>
+
+<mark>observed statistic<mark> - absolute diff between average n_steps of two distributions <br>
+
 ---
 
 ## Hypothesis Testing
+**Question: Do fancier recipes have a greater average amount of calories?**<br>
+
+fancy:
+  more than 15 ingredients<br>
+regular: 
+  less than or equal to 15 ingredients<br>
+
+<mark>null hypothesis<mark>: There is no difference in the number of calories between recipes fancy  and regular ingredients <br>
+
+<mark>alternative hypothesis<mark> : Fancier recipes have a greater average of calories
+than regular recipes <br>
+
+Since we are dealing with numerical values: 
+<mark>observed test statistic <mark>: The observed difference between the average number of calors of fancier and regular recipes. <br>
+
+We decided to create a new column called 'ingred_gt_10' that includes
+boolean statements of whether the recipe needs more than in 10 ingredients.
+We also included another column called 'shuffled_ingred_gt_10' to shuffle 
+our values and conduct a permutation test. 
+
+We conducted a permutation test 10000 times and found that the p_value to be 0.178 with a significance level of  0.05 <br>
+
+**conclusion**
+Because 0.178> 0.05, we fail to reject the hypothesis that there is a difference between the number of. This means that there is no significant difference in the average number of calories between fancier and regular recipes. This may be because we don't take into account the preparation 
+of the recipe and the type of ingredients. This can effect the amount of
+calories. <br>
+
+
+
+
+
+
+
 
 
 
