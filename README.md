@@ -139,7 +139,7 @@ There is an appparent outlier at the point of 37 ingredients and 6 steps.
 **interesting aggregate**<br>
 The average,min, and max sugar content of a recipe based on the amount of steps in the recipe.
 
-
+print(pivot_table[['mean', 'min','max]].head().to_markdown(index=False))
 
 
 ---
