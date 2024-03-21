@@ -75,16 +75,16 @@ description - user provided description <p>
 'rating' : Rating given <br>
 'review' : Review text <br>
 
-<mark> Merged Datframe <mark>
+Merged Datframe <br>
 Both of the dataframes have common columns id and recipe id. In order to keep all the recipes, we merge left the two dateferames to show the corresponding rating and review for each unique recipe. 
 
 
-<mark>Duplicate columns<mark>
-Since the id and recipe id match up, we dropped the recipe column beccause it is uneccesssary to have duplicate values 
+Duplicate columns<br>
+Since the id and recipe id match up, we dropped the recipe column beccause it is uneccesssary to have duplicate values <br>
 
 The columns relevant to our question are protein, sugar, n_steps, minutes, sodium, saturated fat, minutes, total fat, sugar, and carbohydrates, recipe id. 
 
-<mark>Extracting Nutrition Column<mark>
+Extracting Nutrition Column
 We discovered that the values in the list are actually strings. 
 As a result, we converted the values into a list of floats and created individual columns for each value in the list. The added columns are 
 calories, total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV) with float data type
@@ -99,31 +99,35 @@ calories, total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated f
 <iframe src="assets/10-80-enrollment.html" width=800 height=600 frameBorder=0></iframe>
 
 
-
-<iframe
-  src="assets/un1_analysis.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
-
-**Univariate Analysis**
+**Univariate Analysis*
 We looked at the distribution of number of steps('n_steps') and 
 the distribution of number of ingredients('n_ingredients')
 
-
-
 The distributuon is skewed right  with the max count being 8, meaning that more most recipes have n_ingredients .
+<iframe
+  src="assets/un1_analysis.html"
+  width="600"
+  height="400"
+  frameborder="0"
+></iframe>
 
 
 The distribution is skewed right with the max count being 7, meaning that most recipes have 7 steps.
+<iframe
+  src="assets/un2_analysis.html"
+  width="600"
+  height="400"
+  frameborder="0"
+></iframe>
+
+The distribution is skewed right with the max count being 7, meaning that most recipes have 7 steps. 
 
 **Bivariate Analysis**
-We looked at the relationship between <mark> number of steps<mark>
+We looked at the relationship between number of steps
 and the amount of protein and the number of ingredients and the the number
-of steps and the number of ingredients
+of steps and the number of ingredients <br>
 
-For the  <mark> number of steps<mark> and the amount of protein there seems no be no correlation and a weak relationship. There is an apparent outlier of4356 g of protein and 4 steps. The points are mainly clustered below 1000
+For the  number of steps and the amount of protein there seems no be no correlation and a weak relationship. There is an apparent outlier of4356 g of protein and 4 steps. The points are mainly clustered below 1000
 g of protein. 
 
 
@@ -133,7 +137,9 @@ There is an appparent outlier at the point of 37 ingredients and 6 steps.
 
 
 **interesting aggregate**<br>
-The average,minm and max sugar content of a recipe based on the amount of steps in the recipe.
+The average,min, and max sugar content of a recipe based on the amount of steps in the recipe.
+
+
 
 
 ---
@@ -173,11 +179,11 @@ impact the average rating.
 
 **'Rating' Missingness** <br>
 **Missingness of rating based on the number of steps**
-<mark>Null Hypothesis<mark> : distribution of n_steps when rating is missing is the same as the distribution of the calories 
+Null Hypothesis<mark> : distribution of n_steps when rating is missing is the same as the distribution of the calories 
 when rating is not missing <br>
-<mark>Alternative Hypothesis<mark>  - distribution n_steps is different when rating is missing and when rating is not <br>
+Alternative Hypothesis - distribution n_steps is different when rating is missing and when rating is not <br>
 
-<mark>observed statistic<mark> - absolute diff between average n_steps of two distributions <br>
+observed statistic- absolute diff between average n_steps of two distributions <br>
 
 ---
 
@@ -203,6 +209,11 @@ We also included another column called 'shuffled_ingred_gt_10' to shuffle
 our values and conduct a permutation test. 
 
 We conducted a permutation test 10000 times and found that the p_value to be 0.178 with a significance level of  0.05 <br>
+  src="assets/hypothesis.html"
+  width="600"
+  height="400"
+  frameborder="0"
+
 
 **conclusion**
 Because 0.178> 0.05, we fail to reject the hypothesis that there is a difference between the number of. This means that there is no significant difference in the average number of calories between fancier and regular recipes. This may be because we don't take into account the preparation 
