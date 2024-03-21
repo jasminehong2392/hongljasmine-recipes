@@ -26,11 +26,9 @@ Cleaned Dataframe Columns
 |  tags        |  object |
 |  nutrition   |  object |
 
-
-	term
-: definition
-
 Recipes Dataset
+
+
 'name' - Recipe Name 
 'id' - recipe id 
 'minutes' - minutes to prepare recipe
