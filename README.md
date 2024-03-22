@@ -230,13 +230,14 @@ Null hypothesis: the distribution of the minutes when rating is missing is the s
 
 Alternative hypothesis: the distribution of the minutes when rating is missing is different from the distribution of the minutes when rating is not missing <br>
 Observed Statistic: the absolute difference between minutes mean of these two distributions. <br>
+
 <iframe
   src="assets/missingness2.html"
   width="600"
   height="400"
   frameborder="0"
 ></iframe>
-
+The observed test statistic is 1.8245243535429267
 
 <iframe
   src="assets/missingness1.html"
