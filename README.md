@@ -9,7 +9,7 @@ by Jasmine & Shekar
 
 Our analysis explores which types of recipes are more likely to be high in calories and to predict recipe ratings. This information is valuable for individuals seeking tasty recipes that align with their dietary goals. By identifying these trends, we provide a useful tool for those looking for flavorful recipes that are also within their calorie limits. Calories are essential units of energy required for bodily functions.Our analysis helps people find diet-friendly and tasty recipes."
 
-The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw_Recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contain data posted since 2008 
+The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw_Recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes.There are 82782 rows and 12 columns in the Recipe dataset. Each row is a unique recipe. There are  731927 rows and 5 columns in Raw_interactions. Each row is a review left by a user.Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contain data posted since 2008 
 
 
 
@@ -17,7 +17,6 @@ The two csv datasets we are working with are Raw Recipes and Raw Interactions. R
 
 ## Cleaning and EDA
 
-There are 82782 rows and 12 columns in the Recipe dataset. Each row is a unique recipe.
 **Recipes Dataset**
 
 <p>'name' : Recipe Name <br>
@@ -34,7 +33,6 @@ There are 82782 rows and 12 columns in the Recipe dataset. Each row is a unique 
 
 </p>
 
-There are  731927 rows and 5 columns in raw interactions. Each row is a review left by a user.
 **Raw Interactions Dataset** 
 
 'user_id' : User ID 
@@ -232,9 +230,9 @@ is more appropriate in cases where the values are not known or the true rating i
 **'Rating' Missingness** <br>
 **Missingness of rating based on the number of steps** <br>
 
-*Null Hypothesis* : The distribution of 'n_steps' when 'rating' is missing is the same as the distribution of 'n_steps' when 'rating' is not missing.
+*null Hypothesis* : The distribution of 'n_steps' when 'rating' is missing is the same as the distribution of 'n_steps' when 'rating' is not missing.
  <br>
-*Alternative Hypothesis* - The distribution of 'n_steps' is different when 'rating' is missing compared to when 'rating' is not missing. <br>
+*alternative Hypothesis* - The distribution of 'n_steps' is different when 'rating' is missing compared to when 'rating' is not missing. <br>
 *observed statistic* - absolute difference between the average 'n_steps' when 'rating' is missing and the average 'n_steps' when 'rating' is not missing. <br>
 
 <iframe
