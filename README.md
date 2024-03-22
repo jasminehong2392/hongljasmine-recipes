@@ -87,7 +87,6 @@ The columns relevant to our question are ['id','minutes','n_steps','n_ingredient
 
 | Column Name    | Data Type   |
 |:---------------|:------------|
-| id             | int64       |
 | minutes        | int64       |
 | n_steps        | int64       |
 | n_ingredients  | int64       |
@@ -100,6 +99,7 @@ The columns relevant to our question are ['id','minutes','n_steps','n_ingredient
 | review         | object      |
 | average_rating | float64     |
 | ingredients    | object      |
+
 
 
 
@@ -358,7 +358,12 @@ Since I applied different transformers to different columns, I used a column tra
 
 I tuned the max depth hyper parameter for the decision tree and iteratively ran a for loop to get the best max-depth. I simply just ran a for loop, creating and scoring each pipeline for each max depth value, ranging from 1 to 200. 200 iterations was a bit extra, especially because it took a while to run, but I wanted to be as accurate as possible.
 
-Compared to my original model, my final model is much better. With an average absolute value test R^2 score of around 0.65, my model is much better at predicting the rating of recipes. This means that there is a trend that I am able to slightly generate with my model. As opposed to my original model which was not accurate at all, my final model icorporates more features and is able to predict data petter<br>
+Compared to my original model, my final model is much better. With an average absolute value test R^2 score of around 0.65, my model is much better at predicting the rating of recipes. This means that there is a trend that I am able to slightly generate with my model. As opposed to my original model which was not accurate at all, my final model icorporates more features and is able to predict data better<br>
 
+
+## Final Model <br>
+<pr>
+
+<br>
 ---
 
