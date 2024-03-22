@@ -6,7 +6,7 @@ by Jasmine & Shekar
 
 ## Introduction
 
-Our analysis explores which types of recipes are more likely to be high in calories and to predict recipe ratings. This information is valuable for individuals seeking rasty recipes that align with their dietary goals. By identifying these trends, we provide a useful tool for those looking for flavorful recipes that are also within their calorie limits. Calories are essential units of energy required for bodily functions.Our analysis helps people find diet-friendly and tasty recipes."
+Our analysis explores which types of recipes are more likely to be high in calories and to predict recipe ratings. This information is valuable for individuals seeking tasty recipes that align with their dietary goals. By identifying these trends, we provide a useful tool for those looking for flavorful recipes that are also within their calorie limits. Calories are essential units of energy required for bodily functions.Our analysis helps people find diet-friendly and tasty recipes."
 
 The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw_Recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contain data posted since 2008 
 
