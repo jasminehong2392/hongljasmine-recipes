@@ -309,18 +309,6 @@ boolean statements of whether the recipe needs more than in 10 ingredients.
 We also included another column called 'shuffled_ingred_gt_10' to shuffle 
 our values and conduct a permutation test. <br>
 
-<p></p>
-
-|   calories |   n_ingredients | ingred_gt_10   | shuffled_ingred_gt_10   |
-|-----------:|----------------:|:---------------|:------------------------|
-|      138.4 |               9 | False          | False                   |
-|      595.1 |              11 | False          | False                   |
-|      194.8 |               9 | False          | False                   |
-|      194.8 |               9 | False          | False                   |
-|      194.8 |               9 | False          | False                   |
-
-<br>
-
 
 
 We conducted a permutation test 10000 times and found that the p_value to be 0.178 with a significance level of  0.05 <br>
