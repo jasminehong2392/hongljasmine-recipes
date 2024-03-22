@@ -117,12 +117,9 @@ calories, total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated f
 
 ## Cleaning and EDA
 
-<iframe src="assets/10-80-enrollment.html" width=800 height=600 frameBorder=0></iframe>
-
-
-**Univariate Analysis*
+**Univariate Analysis**
 We looked at the distribution of number of steps('n_steps') and 
-the distribution of number of ingredients('n_ingredients')
+the distribution of number of ingredients('n_ingredients') <br>
 
 The distributuon is skewed right  with the max count being 8, meaning that more most recipes have n_ingredients .
 <iframe
@@ -132,15 +129,16 @@ The distributuon is skewed right  with the max count being 8, meaning that more 
   frameborder="0"
 ></iframe>
 
+<br>
 
-The distribution is skewed right with the max count being 7, meaning that most recipes have 7 steps.
+
 <iframe
   src="assets/un2_analysis.html"
   width="600"
   height="400"
   frameborder="0"
 ></iframe>
-
+<br>
 The distribution is skewed right with the max count being 7, meaning that most recipes have 7 steps. 
 
 **Bivariate Analysis**
@@ -152,15 +150,27 @@ For the  number of steps and the amount of protein there seems no be no correlat
 g of protein. 
 
 
+
 For the number of ingredients and the the number
 of steps, there also seems to be no correlation and a weak relationship. 
 There is an appparent outlier at the point of 37 ingredients and 6 steps.
 
 
 **interesting aggregate**<br>
-The average,min, and max sugar content of a recipe based on the amount of steps in the recipe.
+The average,min, and max sugar content of a recipe based on the amount of steps in the recipe.<br>
 
-print(pivot_table[['mean', 'min','max]].head().to_markdown(index=False))
+|   n_steps |   ('mean', 'sugar') |   ('max', 'sugar') |   ('min', 'sugar') |
+|----------:|--------------------:|-------------------:|-------------------:|
+|         1 |             64.0372 |               2360 |                  0 |
+|         2 |             67.5614 |               4005 |                  0 |
+|         3 |             60.2696 |               3537 |                  0 |
+|         4 |             60.8759 |              16901 |                  0 |
+|         5 |             54.3202 |              14495 |                  0 |
+
+
+
+
+
 
 
 ---
@@ -174,32 +184,16 @@ write one. Therefore, the individual chooses not to include a description<br>
 
 'Description' can become a MAR missingness if we add a new column with boolean statements of whether or not they are on a mobile device. There may be no description if the value is true. <br>
 
-Here's what a Markdown table looks like. Note that the code for this table was generated _automatically_ from a DataFrame, using
-
-Here's what a Markdown table looks like. Note that the code for this table was generated _automatically_ from a DataFrame, using
-
-```py
-print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
-```
-
-| Quarter     |   Count |
-|:------------|--------:|
-| Fall 2020   |       3 |
-| Winter 2021 |       2 |
-| Spring 2021 |       6 |
-| Summer 2021 |       4 |
-| Fall 2021   |      55 |
-
 There is more than one column that has nan values. However, columns with 
 only one row of nan values don't have a significant impact on our 
-analysis. 
-We assume that ratings of 0 are replaced with nan because 
+analysis. We assume that ratings of 0 are replaced with nan because 
 the individual didn't rate the recipe at at all. As a result, there
 is not rating. 0.0 indicates that they strongly disliked the recipe which may not Including 0 would
-impact the average rating. 
+impact the average rating. <br>
 
 **'Rating' Missingness** <br>
 **Missingness of rating based on the number of steps**
+
 Null Hypothesis<mark> : distribution of n_steps when rating is missing is the same as the distribution of the calories 
 when rating is not missing <br>
 Alternative Hypothesis - distribution n_steps is different when rating is missing and when rating is not <br>
@@ -216,20 +210,21 @@ fancy:
 regular: 
   less than or equal to 15 ingredients<br>
 
-<mark>null hypothesis<mark>: There is no difference in the number of calories between recipes fancy  and regular ingredients <br>
+null hypothesis: There is no difference in the number of calories between recipes fancy  and regular ingredients <br>
 
-<mark>alternative hypothesis<mark> : Fancier recipes have a greater average of calories
+alternative hypothesis: Fancier recipes have a greater average of calories
 than regular recipes <br>
 
 Since we are dealing with numerical values: 
-<mark>observed test statistic <mark>: The observed difference between the average number of calors of fancier and regular recipes. <br>
+observed test statistic : The observed difference between the average number of calors of fancier and regular recipes. <br>
 
-We decided to create a new column called 'ingred_gt_10' that includes
+<p>We decided to create a new column called 'ingred_gt_10' that includes
 boolean statements of whether the recipe needs more than in 10 ingredients.
 We also included another column called 'shuffled_ingred_gt_10' to shuffle 
-our values and conduct a permutation test. 
+our values and conduct a permutation test. <br>
 
 We conducted a permutation test 10000 times and found that the p_value to be 0.178 with a significance level of  0.05 <br>
+
   src="assets/hypothesis.html"
   width="600"
   height="400"
@@ -237,7 +232,7 @@ We conducted a permutation test 10000 times and found that the p_value to be 0.1
 
 
 **conclusion**
-Because 0.178> 0.05, we fail to reject the hypothesis that there is a difference between the number of. This means that there is no significant difference in the average number of calories between fancier and regular recipes. This may be because we don't take into account the preparation 
+<pr>Because 0.178> 0.05, we fail to reject the hypothesis that there is a difference between the number of. This means that there is no significant difference in the average number of calories between fancier and regular recipes. This may be because we don't take into account the preparation 
 of the recipe and the type of ingredients. This can effect the amount of
 calories. <br>
 
