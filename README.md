@@ -6,9 +6,7 @@ by Jasmine & Shekar
 
 ## Introduction
 
-For our analysis, we chose to explore what types of recipes tend to have the most calories and we chose to predict the ratings of food using modeling. Our analysis is helpful for readers who are looking for a recipe that fits their dietary goals. This is a greal tool for people who are looking
-for a tasty recipe that is also within their calorie goal. Calorie is a unit of energy that every person needs in order to function. People are always trying to find
-recipes that diet friendly and good tasting. 
+Our analysis explores which types of recipes are more likely to be high in calories and to predict recipe ratings. This information is valuable for individuals seeking rasty recipes that align with their dietary goals. By identifying these trends, we provide a useful tool for those looking for flavorful recipes that are also within their calorie limits. Calories are essential units of energy required for bodily functions.Our analysis helps people find diet-friendly and tasty recipes."
 
 The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw_Recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contain data posted since 2008 
 
