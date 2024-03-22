@@ -125,21 +125,6 @@ Here's what a Markdown table looks like. Note that the code for this table was g
 
 
 
-# COOKIN CALORIES
-# Recipes
-
-by Jasmine  & Shekar
-
-
----
-
-## Introduction
-
-For our analysis, we chose to explore what types of recipes tend to have the most recipes and predict the amount of calories in a given recipe. 
-Our analysis is helpful for readers who are looking for a recipe that fits their dietary goals. Our analysis is a great tool for readers who are looking for people looking to gain weight in the form of lean muscle mass or energy. Calories are units of energy that every individual needs for their body to function. 
-
-The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contains recipes posted since 2008
-
 
 **Cleaned Dataframe Columns** <br>
 
@@ -211,18 +196,6 @@ description - user provided description <br>
 'review' : Review text <br>
 
 
-
-|   index |    user_id |   recipe_id | date       |   rating | review                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-|--------:|-----------:|------------:|:-----------|---------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       0 |    1293707 |       40893 | 2011-12-21 |        5 | So simple, so delicious! Great for chilly fall evening. Should have doubled it ;)<br/><br/>Second time around, forgot the remaining cumin. We usually love cumin, but didn't notice the missing 1/2 teaspoon!                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|       1 |     126440 |       85009 | 2010-02-27 |        5 | I made the Mexican topping and took it to bunko.  Everyone loved it.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|       2 |      57222 |       85009 | 2011-10-01 |        5 | Made the cheddar bacon topping, adding a sprinkling of black pepper. Yum!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|       3 |     124416 |      120345 | 2011-08-06 |        0 | Just an observation, so I will not rate.  I followed this procedure with strawberries instead of raspberries.  Perhaps this is the reason it did not work well.  Sorry to report that the strawberries I did in August were moldy in October.  They were stored in my downstairs fridge, which is very cold and infrequently opened.  Delicious and fresh-tasting prior to that, though.  So, keep a sharp eye on them.  Personally I would not keep them longer than a month.  This recipe also appears as #120345 posted in July 2009, which is when I tried it.  I also own the Edna Lewis cookbook in which this appears. |
-|       4 | 2000192946 |      120345 | 2015-05-10 |        2 | This recipe was OVERLY too sweet.  I would start out with 1/3 or 1/4 cup of sugar and jsut add on from there.  Just 2 cups was way too much and I had to go back to the grocery store to buy more raspberries because it made so much mix.  Overall, I would but the long narrow box or raspberries.  Its a perfect fit for the recipe plus a little extra.  I was not impressed with this recipe.  It was exceptionally over-sweet.  If you make this simple recipe, MAKE SURE TO ADD LESS SUGAR!                                                                                                                            |
-
-
-                                                                                                                                                                                                                                                                                                                                                                                                            |
-
 <br>
 
 **Merged Datframe**
@@ -286,8 +259,11 @@ There is an appparent outlier at the point of 37 ingredients and 6 steps.
 **interesting aggregate**<br>
 The average,min, and max sugar content of a recipe based on the amount of steps in the recipe.<br>
 
+
+
+
 |   n_steps |   ('mean', 'sugar') |   ('max', 'sugar') |   ('min', 'sugar') |
-|----------:|--------------------:|-------------------:|-------------------:|
+  |----------:|--------------------:|-------------------:|-------------------:|
 |         1 |             64.0372 |               2360 |                  0 |
 |         2 |             67.5614 |               4005 |                  0 |
 |         3 |             60.2696 |               3537 |                  0 |
