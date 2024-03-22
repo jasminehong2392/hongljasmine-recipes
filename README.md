@@ -234,6 +234,8 @@ is more appropriate in cases where the values are not known or the true rating i
   frameborder="0"
 ></iframe>
 
+The mean is about the same because they are both cerntered around the same place but have different shape. 
+
 <iframe
   src="assets/missingness3.html"
   width="600"
