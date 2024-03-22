@@ -9,7 +9,7 @@ by Jasmine & Shekar
 For our analysis, we chose to explore what types of recipes tend to have the most recipes and predict the amount of calories in a given recipe. 
 Our analysis is helpful for readers who are looking for a recipe that fits their dietary goals. Our analysis is a great tool for readers who are looking for people looking to gain weight in the form of lean muscle mass or energy. Calories are units of energy that every individual needs for their body to function. 
 
-<p>The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contains recipes posted since 2008<br>
+<p>The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contains recipes posted since 2008 <br>
 
 
 **Cleaned Dataframe Columns** <br>
@@ -73,9 +73,11 @@ dtype: object
 'steps' - text for recipe steps, in order<br>
 description - user provided description <br>
 
-**Raw Interactions Dataset**
 
-<p>'user_id' : User ID <br>
+</p>
+
+**Raw Interactions Dataset**
+'user_id' : User ID <br>
 'recipe_id':Recipe ID <br>
 'date' : Date of interaction <br>
 'rating' : Rating given <br>
@@ -91,6 +93,28 @@ Both of the dataframes have common columns id and recipe id. In order to keep al
 Since the id and recipe id match up, we dropped the recipe column beccause it is uneccesssary to have duplicate values <br>
 
 The columns relevant to our question are protein, sugar, n_steps, minutes, sodium, saturated fat, minutes, total fat, sugar, and carbohydrates, recipe id. <br>
+
+
+
+
+
+
+|     id |   minutes |   n_steps |   n_ingredients |   calories |   total_fat |   sugar |   sodium |   protein |   saturated fat |   carbohydrates |
+|-------:|----------:|----------:|----------------:|-----------:|------------:|--------:|---------:|----------:|----------------:|----------------:|
+| 333281 |        40 |        10 |               9 |      138.4 |          10 |      50 |        3 |         3 |              19 |               6 |
+| 453467 |        45 |        12 |              11 |      595.1 |          46 |     211 |       22 |        13 |              51 |              26 |
+| 306168 |        40 |         6 |               9 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |
+| 306168 |        40 |         6 |               9 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |
+| 306168 |        40 |         6 |               9 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |
+
+
+
+
+
+
+
+
+
 
 **Extracting Nutrition Column** <br>
 We discovered that the values in the list are actually strings. 
@@ -109,13 +133,9 @@ calories, total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated f
 We looked at the distribution of number of steps('n_steps') and 
 the distribution of number of ingredients('n_ingredients') <br>
 
-The distributuon is skewed right  with the max count being 8, meaning that more most recipes have n_ingredients .
-<iframe
-  src="assets/un1_analysis.html"
-  width="600"
-  height="400"
-  frameborder="0"
-></iframe>
+The distributionn has a bell shaped curved and is skewed right  with the max count of n_ingredients being 8. This means that most recipes have 
+8 ingredients .
+
 
 <br>
 
