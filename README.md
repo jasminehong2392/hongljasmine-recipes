@@ -375,7 +375,9 @@ test statistic: difference of R^2 score between models tested on recipes belongi
 First we train our model to the original dataset. For N=30 times, we randomize the average user ratings of each contributor, and then test these randomly shuffled datasets of bad and good chefs. We test the datasets on the originally fitted model, that was fitted to the original dataset filled with the actual values of both bad and good chefs. We get a score "a" for the randomly shuffled good chefs, and a score "b" for the randomly shuffled bad chefs. We then see if the difference between these R^2 scores is greater than the test statistic. For N=30 times, we count how many times this is true.
 
 Group X: Contributors with above a 4.5 average rating
+
 Group Y: Contributors with below a 4.5 average rating
+
 
 Null Hypothesis: Our model is fair. The R^2 score with respect to a recipe's rating, that our model produces for good cooks and exceptional cook is roughly the same, and any differences are due to chance.
 Alternative Hypothesis: Our model is unfair. The R^2 score with respect to a recipe's rating, that our model produces for good cooks is different than the R^2 that our model produces for exceptional cooks. Our model is better at producing results for one group than the other
