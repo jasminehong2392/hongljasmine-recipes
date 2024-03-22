@@ -64,7 +64,7 @@ The columns relevant to our question are coluprotein,calories, sugar, n_steps,in
 review. Those are the columns we focused on for cleaning. 
 
 
-Cleaned DataFrame and Data Type With Relevant Columns
+**Cleaned DataFrame and Data Type With Relevant Columns**
 
 |     id |   minutes |   n_steps |   n_ingredients |   calories |   total_fat |   sugar |   sodium |   protein |   saturated fat |   carbohydrates |   rating | review                                                                                                                                                                                                                                                                                                                                           |   average_rating |
 |-------:|----------:|----------:|----------------:|-----------:|------------:|--------:|---------:|----------:|----------------:|----------------:|---------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------:|
@@ -76,7 +76,28 @@ Cleaned DataFrame and Data Type With Relevant Columns
 | 306168 |        40 |         6 |               9 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |        5 | I made this for my son's first birthday party this weekend. Our guests INHALED it! Everyone kept saying how delicious it was. I was I could have gotten to try it.                                                                                                                                                                               |                5 |
 | 306168 |        40 |         6 |               9 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |        5 | Loved this.  Be sure to completely thaw the broccoli.  I didn&#039;t and it didn&#039;t get done in time specified.  Just cooked it a little longer though and it was perfect.  Thanks Chef.                                                                                                                                                     |                5 |
 
-The Whole DF data type
+
+| Column Name    | Data Type   |
+|:---------------|:------------|
+| id             | int64       |
+| minutes        | int64       |
+| n_steps        | int64       |
+| n_ingredients  | int64       |
+| calories       | float64     |
+| total_fat      | float64     |
+| sugar          | float64     |
+| sodium         | float64     |
+| protein        | float64     |
+| saturated fat  | float64     |
+| carbohydrates  | float64     |
+| rating         | float64     |
+| review         | string      |
+| average_rating | float64     |
+
+
+
+
+**The whole Dataframe data type**
 
 | Column Name    | Data Type   |
 |:---------------|:------------|
@@ -201,10 +222,10 @@ is more appropriate in cases where the values are not known or the true rating i
 **'Rating' Missingness** <br>
 **Missingness of rating based on the number of steps** <br>
 
-Null Hypothesis : The distribution of 'n_steps' when 'rating' is missing is the same as the distribution of 'n_steps' when 'rating' is not missing.
+*Null Hypothesis* : The distribution of 'n_steps' when 'rating' is missing is the same as the distribution of 'n_steps' when 'rating' is not missing.
  <br>
-Alternative Hypothesis - The distribution of 'n_steps' is different when 'rating' is missing compared to when 'rating' is not missing. <br>
-observed statistic- absolute difference between the average 'n_steps' when 'rating' is missing and the average 'n_steps' when 'rating' is not missing. <br>
+*Alternative Hypothesis* - The distribution of 'n_steps' is different when 'rating' is missing compared to when 'rating' is not missing. <br>
+*observed statistic* - absolute difference between the average 'n_steps' when 'rating' is missing and the average 'n_steps' when 'rating' is not missing. <br>
 
 <iframe
   src="assets/missingness4.html"
@@ -226,10 +247,10 @@ After conducting a permutation test to shuffle the missingness of rating 1000 ti
 
 
 **Missingness of rating Based on Minutes** <br>
-Null hypothesis: the distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating is not missing 
+*null hypothesis*: the distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating is not missing 
 
-Alternative hypothesis: the distribution of the minutes when rating is missing is different from the distribution of the minutes when rating is not missing <br>
-Observed Statistic: the absolute difference between minutes mean of these two distributions. <br>
+*alternative hypothesis*: the distribution of the minutes when rating is missing is different from the distribution of the minutes when rating is not missing <br>
+*observed statistic*: the absolute difference between minutes mean of these two distributions. <br>
 
 <iframe
   src="assets/missingness2.html"
@@ -263,13 +284,13 @@ fancy:
 regular: 
   less than or equal to 15 ingredients<br>
 
-null hypothesis: There is no difference in the number of calories between recipes fancy  and regular ingredients <br>
+*null hypothesis*: There is no difference in the number of calories between recipes fancy  and regular ingredients <br>
 
-alternative hypothesis: Fancier recipes have a greater average of calories
+*alternative hypothesis* : Fancier recipes have a greater average of calories
 than regular recipes <br>
 
 Since we are dealing with numerical values: 
-observed test statistic : The observed difference between the average number of calors of fancier and regular recipes. <br>
+*observed test statistic* : The observed difference between the average number of calors of fancier and regular recipes. <br>
 
 <p>We decided to create a new column called 'ingred_gt_10' that includes
 boolean statements of whether the recipe needs more than in 10 ingredients.
