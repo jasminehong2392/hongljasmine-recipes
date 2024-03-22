@@ -12,7 +12,7 @@ Our analysis is helpful for readers who are looking for a recipe that fits their
 <p>The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contains recipes posted since 2008 <br>
 
 
-**Cleaned Dataframe Columns** <br>
+**Cleaned Dataframe Columns** 
 
 | Columns      | Datatype|
  |:-------------|--------:|
@@ -24,7 +24,6 @@ Our analysis is helpful for readers who are looking for a recipe that fits their
 |  tags        |  object |
 |  nutrition   |  object |
 
-<br>
 
 | Columns      | Datatype|
  |:-------------|--------:|
