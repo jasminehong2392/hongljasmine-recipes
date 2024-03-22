@@ -167,30 +167,65 @@ The average,min, and max sugar content of a recipe based on the amount of steps 
 **Missingness of 'Description'** <br>
 The column 'description' is NMAR because the user might have submitted
 the recipe on a mobile device like an Iphone. Since it's a smaller screen, it's harder to write out a description. As a result, it takes more time to
-write one. Therefore, the individual chooses not to include a description<br>
+write one. Therefore, the individual may choose not to include a description<br>
 
 'Description' can become a MAR missingness if we add a new column with boolean statements of whether or not they are on a mobile device. There may be no description if the value is true. <br>
 
 There is more than one column that has nan values. However, columns with 
 only one row of nan values don't have a significant impact on our 
-analysis. We assume that ratings of 0 are replaced with nan because 
-the individual didn't rate the recipe at at all. As a result, there
-is not rating. 0.0 indicates that they strongly disliked the recipe which may not Including 0 would
-impact the average rating. <br>
+analysis. We assume that ratings of 0 are replaced with nan because it 
+may impact the average rating. Nan is not included when calculating mean.This
+is more appropriate in cases where the values are not known<br>
 
 **'Rating' Missingness** <br>
 **Missingness of rating based on the number of steps** <br>
 
-Null Hypothesis : distribution of n_steps when rating is missing is the same as the distribution of the calories 
-when rating is not missing <br>
+Null Hypothesis : The distribution of 'n_steps' when 'rating' is missing is the same as the distribution of 'n_steps' when 'rating' is not missing.
+ <br>
+Alternative Hypothesis - The distribution of 'n_steps' is different when 'rating' is missing compared to when 'rating' is not missing. <br>
+observed statistic- absolute difference between the average 'n_steps' when 'rating' is missing and the average 'n_steps' when 'rating' is not missing. <br>
 
-Alternative Hypothesis - distribution n_steps is different when rating is missing and when rating is not <br>
+<iframe
+  src="assets/missingness4.html"
+  width="600"
+  height="400"
+  frameborder="0"
+></iframe>
 
-observed statistic- absolute diff between average n_steps of two distributions <br>
+<iframe
+  src="assets/missingness3.html"
+  width="600"
+  height="400"
+  frameborder="0"
+></iframe>
 
 
+After conducting a permutation test to shuffle the missingness of rating 1000 times and get 1000 simulating results about the absolute difference, we got a p-value of
+0.0. Our significance level is 0.05. Because 0.0 < 0.05, we reject the null hypothesis that distribution of the n_steps when rating is missing is the same as the distribution of the minutes when rating is not missing. Based on our p-value and results, rating is MAR because it's missingness is dependent on the number of steps it takes to prepare the food.
 
 
+**Missingness of rating Based on Minutes** <br>
+Null hypothesis: the distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating is not missing 
+
+Alternative hypothesis: the distribution of the minutes when rating is missing is different from the distribution of the minutes when rating is not missing <br>
+observed Statistic: the absolute difference between minutes mean of these two distributions. <br>
+<iframe
+  src="assets/missingness2.html"
+  width="600"
+  height="400"
+  frameborder="0"
+></iframe>
+
+
+<iframe
+  src="assets/missingness1.html"
+  width="600"
+  height="400"
+  frameborder="0"
+></iframe>
+
+<p> After conducting permutation test to shuffle the missingness of rating 1000 times and get 1000 simulating results about the absolute difference, we got a p-value of
+0.117. Our significance level is 0.05. Because 0.117> 0.05, we fail to reject the null hypothesis that distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating is not missing. Based on our p-value and results, rating is MCAR because it's missingness is not dependent on the amount of minutes it takes to prepart the food. <br>
 
 
 ---
