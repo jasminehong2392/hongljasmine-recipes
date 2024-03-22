@@ -382,7 +382,7 @@ Group Y: Contributors with below a 4.5 average rating
 Null Hypothesis: Our model is fair. The R^2 score with respect to a recipe's rating, that our model produces for good cooks and exceptional cook is roughly the same, and any differences are due to chance.
 Alternative Hypothesis: Our model is unfair. The R^2 score with respect to a recipe's rating, that our model produces for good cooks is different than the R^2 that our model produces for exceptional cooks. Our model is better at producing results for one group than the other
 
-p - value = 0.2
+p - value = 0.12
 
 Since the p value is much greater than our significance level, we fail to reject the null hypothesis. This means that the model predicts the rating of chefs with good accuracy, regardless of their average rating. This makes sense because our model uses a lot of different features to predict recipe rating. Although, the average rating of a chef does likely matter a little bit since they are more prone to making better recipes, our model is fair enough.
 
