@@ -65,9 +65,6 @@ As a result, we converted the values into a list of floats and created individua
 calories, total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV) with float data type<br>
 
 
-**Ingredient Object to List**
-Ingredient looks like a list of strings. However,they are objects. We converted the list values to strings to help with our predictive model. 
-
 
 The columns relevant to our question are ['minutes','n_steps','n_ingredients','calories', 'sugar', 'protein',
        'total_fat', 'carbohydrates','rating','review','average_rating','ingredients'] 
