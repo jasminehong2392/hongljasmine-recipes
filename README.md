@@ -60,39 +60,46 @@ As a result, we converted the values into a list of floats and created individua
 calories, total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV) with float data type<br>
 
 
-The columns relevant to our question are coluprotein,calories, sugar, n_steps,ingredients, n_ingredients, minutes, sugar, recipe id,rating,average rating,and
-review. Those are the columns we focused on for cleaning. 
+**Ingredient Object to List**
+Ingredient looks like a list of strings. However,they are objects. We converted the list values to strings to help with our predictive model. 
+
+
+The columns relevant to our question are ['minutes','n_steps','n_ingredients','calories', 'sugar', 'protein',
+       'total_fat', 'carbohydrates','rating','review','average_rating','ingredients'] 
 
 
 **Cleaned DataFrame and Data Type With Relevant Columns**
 
-|     id |   minutes |   n_steps |   n_ingredients |   calories |   total_fat |   sugar |   sodium |   protein |   saturated fat |   carbohydrates |   rating | review                                                                                                                                                                                                                                                                                                                                           |   average_rating |
-|-------:|----------:|----------:|----------------:|-----------:|------------:|--------:|---------:|----------:|----------------:|----------------:|---------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------:|
-| 333281 |        40 |        10 |               9 |      138.4 |          10 |      50 |        3 |         3 |              19 |               6 |        4 | These were pretty good, but took forever to bake.  I would send it ended up being almost an hour!  Even then, the brownies stuck to the foil, and were on the overly moist side and not easy to cut.  They did taste quite rich, though!  Made for My 3 Chefs.                                                                                   |                4 |
-| 453467 |        45 |        12 |              11 |      595.1 |          46 |     211 |       22 |        13 |              51 |              26 |        5 | Originally I was gonna cut the recipe in half (just the 2 of us here), but then we had a park-wide yard sale, & I made the whole batch & used them as enticements for potential buyers ~ what the hey, a free cookie as delicious as these are, definitely works its magic! Will be making these again, for sure! Thanks for posting the recipe! |                5 |
-| 306168 |        40 |         6 |               9 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |        5 | This was one of the best broccoli casseroles that I have ever made.  I made my own chicken soup for this recipe. I was a bit worried about the tsp of soy sauce but it gave the casserole the best flavor. YUM!                                                                                                                                  |                5 |
-|        |           |           |                 |            |             |         |          |           |                 |                 |          | The photos you took (shapeweaver) inspired me to make this recipe and it actually does look just like them when it comes out of the oven.                                                                                                                                                                                                        |                  |
-|        |           |           |                 |            |             |         |          |           |                 |                 |          | Thanks so much for sharing your recipe shapeweaver. It was wonderful!  Going into my family's favorite Zaar cookbook :)                                                                                                                                                                                                                          |                  |
-| 306168 |        40 |         6 |               9 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |        5 | I made this for my son's first birthday party this weekend. Our guests INHALED it! Everyone kept saying how delicious it was. I was I could have gotten to try it.                                                                                                                                                                               |                5 |
-| 306168 |        40 |         6 |               9 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |        5 | Loved this.  Be sure to completely thaw the broccoli.  I didn&#039;t and it didn&#039;t get done in time specified.  Just cooked it a little longer though and it was perfect.  Thanks Chef.                                                                                                                                                     |                5 |
 
+|   minutes |   n_steps |   n_ingredients |   calories |   sugar |   protein |   total_fat |   carbohydrates |   rating | review                                                                                                                                                                                                                                                                                                                                           |   average_rating | ingredients                                                                                                                                                                    |
+|----------:|----------:|----------------:|-----------:|--------:|----------:|------------:|----------------:|---------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|        40 |        10 |               9 |      138.4 |      50 |         3 |          10 |               6 |        4 | These were pretty good, but took forever to bake.  I would send it ended up being almost an hour!  Even then, the brownies stuck to the foil, and were on the overly moist side and not easy to cut.  They did taste quite rich, though!  Made for My 3 Chefs.                                                                                   |                4 | ['bittersweet chocolate', 'unsalted butter', 'eggs', 'granulated sugar', 'unsweetened cocoa powder', 'vanilla extract', 'brewed espresso', 'kosher salt', 'all-purpose flour'] |
+|        45 |        12 |              11 |      595.1 |     211 |        13 |          46 |              26 |        5 | Originally I was gonna cut the recipe in half (just the 2 of us here), but then we had a park-wide yard sale, & I made the whole batch & used them as enticements for potential buyers ~ what the hey, a free cookie as delicious as these are, definitely works its magic! Will be making these again, for sure! Thanks for posting the recipe! |                5 | ['white sugar', 'brown sugar', 'salt', 'margarine', 'eggs', 'vanilla', 'water', 'all-purpose flour', 'whole wheat flour', 'baking soda', 'chocolate chips']                    |
+|        40 |         6 |               9 |      194.8 |       6 |        22 |          20 |               3 |        5 | This was one of the best broccoli casseroles that I have ever made.  I made my own chicken soup for this recipe. I was a bit worried about the tsp of soy sauce but it gave the casserole the best flavor. YUM!                                                                                                                                  |                5 | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions']          |
+|           |           |                 |            |         |           |             |                 |          | The photos you took (shapeweaver) inspired me to make this recipe and it actually does look just like them when it comes out of the oven.                                                                                                                                                                                                        |                  |                                                                                                                                                                                |
+|           |           |                 |            |         |           |             |                 |          | Thanks so much for sharing your recipe shapeweaver. It was wonderful!  Going into my family's favorite Zaar cookbook :)                                                                                                                                                                                                                          |                  |                                                                                                                                                                                |
+|        40 |         6 |               9 |      194.8 |       6 |        22 |          20 |               3 |        5 | I made this for my son's first birthday party this weekend. Our guests INHALED it! Everyone kept saying how delicious it was. I was I could have gotten to try it.                                                                                                                                                                               |                5 | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions']          |
+|        40 |         6 |               9 |      194.8 |       6 |        22 |          20 |               3 |        5 | Loved this.  Be sure to completely thaw the broccoli.  I didn&#039;t and it didn&#039;t get done in time specified.  Just cooked it a little longer though and it was perfect.  Thanks Chef.                                                                                                                                                     |                5 | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions']          |
+                                                                       
+
+**Relevant Columns Data Type**
 
 | Column Name    | Data Type   |
 |:---------------|:------------|
-| id             | int64       |
 | minutes        | int64       |
 | n_steps        | int64       |
 | n_ingredients  | int64       |
 | calories       | float64     |
-| total_fat      | float64     |
 | sugar          | float64     |
-| sodium         | float64     |
 | protein        | float64     |
-| saturated fat  | float64     |
+| total_fat      | float64     |
 | carbohydrates  | float64     |
 | rating         | float64     |
-| review         | string      |
+| review         | object      |
 | average_rating | float64     |
+| ingredients    | object      |
+
+
 
 
 
