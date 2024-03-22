@@ -87,6 +87,7 @@ The columns relevant to our question are ['id','minutes','n_steps','n_ingredient
 
 | Column Name    | Data Type   |
 |:---------------|:------------|
+| id             | int64       |
 | minutes        | int64       |
 | n_steps        | int64       |
 | n_ingredients  | int64       |
@@ -99,7 +100,6 @@ The columns relevant to our question are ['id','minutes','n_steps','n_ingredient
 | review         | object      |
 | average_rating | float64     |
 | ingredients    | object      |
-
 
 
 
