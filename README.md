@@ -1,8 +1,6 @@
 # COOKIN CALORIES
-# Recipes
 
-by Jasmine  & Shekar
-
+by Jasmine & Shekar 
 
 ---
 
@@ -11,10 +9,10 @@ by Jasmine  & Shekar
 For our analysis, we chose to explore what types of recipes tend to have the most recipes and predict the amount of calories in a given recipe. 
 Our analysis is helpful for readers who are looking for a recipe that fits their dietary goals. Our analysis is a great tool for readers who are looking for people looking to gain weight in the form of lean muscle mass or energy. Calories are units of energy that every individual needs for their body to function. 
 
-The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contains recipes posted since 2008
+<p>The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contains recipes posted since 2008<br>
 
 
-Cleaned Dataframe Columns <br>
+**Cleaned Dataframe Columns** <br>
 
 | Columns      | Datatype|
  |:-------------|--------:|
@@ -73,7 +71,136 @@ dtype: object
 'nutrition' - Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value” <br>
 'n_steps' - # of steps in recipe <br>
 'steps' - text for recipe steps, in order<br>
-description - user provided description <p>
+description - user provided description <br>
+
+**Raw Interactions Dataset**
+
+<p>'user_id' : User ID <br>
+'recipe_id':Recipe ID <br>
+'date' : Date of interaction <br>
+'rating' : Rating given <br>
+'review' : Review text <br>
+
+
+
+
+
+
+
+---
+
+## Cleaning and EDA
+
+
+
+
+
+---
+
+## Assessment of Missingness
+
+Here's what a Markdown table looks like. Note that the code for this table was generated _automatically_ from a DataFrame, using
+
+
+
+| Quarter     |   Count |
+|:------------|--------:|
+| Fall 2020   |       3 |
+| Winter 2021 |       2 |
+| Spring 2021 |       6 |
+| Summer 2021 |       4 |
+| Fall 2021   |      55 |
+
+---
+
+## Hypothesis Testing
+
+
+---
+
+
+
+
+
+
+
+
+# COOKIN CALORIES
+# Recipes
+
+by Jasmine  & Shekar
+
+
+---
+
+## Introduction
+
+For our analysis, we chose to explore what types of recipes tend to have the most recipes and predict the amount of calories in a given recipe. 
+Our analysis is helpful for readers who are looking for a recipe that fits their dietary goals. Our analysis is a great tool for readers who are looking for people looking to gain weight in the form of lean muscle mass or energy. Calories are units of energy that every individual needs for their body to function. 
+
+The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contains recipes posted since 2008
+
+
+**Cleaned Dataframe Columns** <br>
+
+| Columns      | Datatype|
+ |:-------------|--------:|
+|id |  int64  | 
+| minutes      |  int64  | 
+|contributor_id|  int64  |
+| submitted    |  object |
+|  tags        |  object |
+|  tags        |  object |
+|  nutrition   |  object |
+
+<br>
+
+| Columns      | Datatype|
+ |:-------------|--------:|
+|id |  int64  | 
+| name      |  object  | 
+|minutes|  int64  |
+| contributor_id    |  int64 |
+|  submitted        |  datetime62[ns] |
+|  tags        |  object |
+|  nutrition   |  object |
+|  n_steps   |  object |
+|  steps   |  object |
+|  description   |  object |
+|  description   |  object |
+
+
+| Columns      | Datatype|
+|:-------------|--------:|
+|tags|  object  |
+|nutrition|  object  |
+|n_steps  |int64|
+|steps       | object|
+|description  | object|
+|ingredients    | object|
+|n_ingredients  | int64|
+|ave_rating     | float64|
+|calories      | float64|
+|total fat (PDV)   | float64|
+|sugar (PDV)    |float64|
+|sodium (PDV)   | float64|
+|protein (PDV)  |  float64|
+|saturated fat (PDV) | float64|
+|carbohydrates (PDV) |  float64|
+dtype: object
+
+**Recipes Dataset**
+
+<p>'name' : Recipe Name <br>
+'id' : Recipe ID <br>
+'minutes' : minutes to prepare recipe <br>
+'contributor_id' : user id who submitted recipe <br>
+'submitted' : date recipe was submitted <br>
+'tabs' - related tags for the recipe, generated by Food.com <br>
+'nutrition' - Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value” <br>
+'n_steps' - # of steps in recipe <br>
+'steps' - text for recipe steps, in order<br>
+description - user provided description <br>
 
 **Raw Interactions Dataset**
 
