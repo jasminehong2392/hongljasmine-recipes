@@ -218,10 +218,13 @@ our values and conduct a permutation test. <br>
 
 We conducted a permutation test 10000 times and found that the p_value to be 0.178 with a significance level of  0.05 <br>
 
+
+<iframe
   src="assets/hypthesis.html"
   width="600"
   height="400"
   frameborder="0"
+></iframe>
 
 <br>
 
