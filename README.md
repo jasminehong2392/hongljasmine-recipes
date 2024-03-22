@@ -283,8 +283,9 @@ The observed absolute difference is 51.45. Most of the points are to the left of
 0.117. Our significance level is 0.05. Because 0.117> 0.05, we fail to reject the null hypothesis that the distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating is not missing. Based on our p-value and results, rating is MCAR because it's missingness is not dependent on the amount of minutes it takes to prepare the food. <br> 
 
 
----
 
+
+---
 ## Hypothesis Testing <br>
 
 
@@ -311,7 +312,7 @@ our values and conduct a permutation test. <br>
 <p></p>
 
 |   calories |   n_ingredients | ingred_gt_10   | shuffled_ingred_gt_10   |
-  |-----------:|----------------:|:---------------|:------------------------|
+|-----------:|----------------:|:---------------|:------------------------|
 |      138.4 |               9 | False          | False                   |
 |      595.1 |              11 | False          | False                   |
 |      194.8 |               9 | False          | False                   |
@@ -333,7 +334,6 @@ We conducted a permutation test 10000 times and found that the p_value to be 0.1
 ></iframe>
 
 <br>
-
 
 **conclusion** <br>
 <pr>Because 0.178> 0.05, we fail to reject the hypothesis that there is a difference between the number of calories in fancy and regular recipes. This means that there is no significant difference in the average number of calories between fancier and regular recipes. There are many factors that can contribute to calories of a recipe. This may include the preparation process
