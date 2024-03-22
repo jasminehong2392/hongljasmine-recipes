@@ -366,6 +366,24 @@ Compared to our original model, our final model is much better. With an average 
 ## Fairness Analysis <br>
 <pr>
 
+Does the model fairly predict a recipe's rating, even considering the average rating of the contributor. Some recipe contributors are very good chefs, and make a lot of very good meals. Do better chefs more consistently make certain kinds of meals, do they make more sporatic recipes, or is there no difference between the recipes that good and bad chefs make. for simplicity, we will refer to these people as bad and good chefs. Bad chefs have an average rating of below 4.5, and good chefs have an average rating of 4.5 and above
+
+significance level a=0.05
+Evalutation metric: R^2
+test statistic: difference of R^2 score between models tested on recipes belonging to good chefs and models tested to bad chefs. 
+
+First we train our model to the original dataset. For N=30 times, we randomize the average user ratings of each contributor, and then test these randomly shuffled datasets of bad and good chefs. We test the datasets on the originally fitted model, that was fitted to the original dataset filled with the actual values of both bad and good chefs. We get a score "a" for the randomly shuffled good chefs, and a score "b" for the randomly shuffled bad chefs. We then see if the difference between these R^2 scores is greater than the test statistic. For N=30 times, we count how many times this is true.
+
+Group X: Contributors with above a 4.5 average rating
+Group Y: Contributors with below a 4.5 average rating
+
+Null Hypothesis: Our model is fair. The R^2 score that our model produces for good cooks and exceptional cook is roughly the same, and any differences are due to chance.
+Alternative Hypothesis: Our model is unfair. The R^2 score that our model produces for good cooks is different than the R^2 that our model produces for exceptional cooks. Our model is better at producing results for one group than the other
+
+p - value = 0.2
+
+Since the p value is much greater than our significance level, we fail to reject the null hypothesis. This means that the model predicts the rating of chefs with good accuracy, regardless of their average rating. This makes sense because our model uses a lot of different features to predict recipe rating. Although, the average rating of a chef does likely matter a little bit since they are more prone to making better recipes, our model is fair enough.
+
 <br>
 ---
 
