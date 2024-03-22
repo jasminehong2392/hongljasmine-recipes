@@ -11,6 +11,12 @@ Our analysis explores which types of recipes are more likely to be high in calor
 
 The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw_Recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contain data posted since 2008 
 
+
+
+---
+
+## Cleaning and EDA
+
 There are 82782 rows and 12 columns in the Recipe dataset. Each row is a unique recipe.
 **Recipes Dataset**
 
@@ -135,9 +141,6 @@ The columns relevant to our question are ['minutes','n_steps','n_ingredients','c
 
 
 
----
-
-## Cleaning and EDA
 
 
 **Univariate Analysis**
@@ -308,7 +311,7 @@ our values and conduct a permutation test. <br>
 <p></p>
 
 |   calories |   n_ingredients | ingred_gt_10   | shuffled_ingred_gt_10   |
-|-----------:|----------------:|:---------------|:------------------------|
+  |-----------:|----------------:|:---------------|:------------------------|
 |      138.4 |               9 | False          | False                   |
 |      595.1 |              11 | False          | False                   |
 |      194.8 |               9 | False          | False                   |
@@ -316,6 +319,7 @@ our values and conduct a permutation test. <br>
 |      194.8 |               9 | False          | False                   |
 
 <br>
+
 
 
 We conducted a permutation test 10000 times and found that the p_value to be 0.178 with a significance level of  0.05 <br>
