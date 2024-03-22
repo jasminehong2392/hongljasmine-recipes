@@ -195,6 +195,9 @@ observed statistic- absolute diff between average n_steps of two distributions <
 
 ---
 
+
+
+
 ## Hypothesis Testing
 **Question: Do fancier recipes have a greater average amount of calories?** <br>
 
