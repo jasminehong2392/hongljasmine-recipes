@@ -338,12 +338,12 @@ of the recipe and the type of ingredients it is made of. This can effect the amo
 What we wanted to do was create a machine learning model that would use other variables available to us in the data to estimate how good a meal was. Since food is very subjective and varies from person to person, we figured that there must be other ways besides a rating to tell if a recipe is going to turn out well. A rating is the best way to guess this, but other factors must contribute a role to how good the food is. We wanted to engineer an algorithm that gives us a pretty good prediction of the rating, and a regression was the best way of doing this. We will be able to use any column in the dataframe for our model except the rating of course. The test statistic to be chosen is R^2. For my model, the test statistic chosen is r^2. This makes sense and it what we want since we want a correlation coefficient of how accurate our model can get when predicting the rating scores of given recipes. The correlation coefficient will determine how similar the data points on our training are to the test set. <br>
 
 
-**Question: Baseline Model** <br>
+## Baseline Model <br>
 <pr>
 Our model is a DecisionTree Regression model with 20 steps. I later change this to 174 steps after tuning the hyperparameter, but in my base model it is 20. I only have a few features right now which are minutes, and all the nutrition. I am using a quantile transformer on the minutes column, and a standard scaler on all the nutrition info like calories, sugar, sodium, protein, etc. All the data I have in this model right now, 8 variables and 2 features, is quantitative. They are all numbers which allows me to use simple transformers on them without any encoding. In the final model, I have 2 more quantitative variables which are the number of ingredients and the number of steps, but I also have 2 columns of nominal data, which are ingredients and reviews. These are nominal since they are categorical data that cannot be ordered. In the final model, I convert this into quantitative data that I can use by identifying if certain key terms is in the data. Right now, my model is not good. I only have 2 features which produce an absolute value R^2 score of only 0.12. This does not show any correlation and my model cannot predict the scores at this point. <br>
 
 
-**Question: Final Model** <br>
+## Final Model <br>
 <pr>
 I chose a Decision Tree Regressive model since there was a lot of data, and Decision Trees are relatively fast at sifting through a lot of data and a lot of variables. They make good and fast choices about using certain features, meaning they are ideal for what I wanted to do.
 
