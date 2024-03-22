@@ -186,9 +186,8 @@ dtype: object
 'n_steps' - # of steps in recipe <br>
 'steps' - text for recipe steps, in order<br>
 description - user provided description <br>
-
+ 
 **Raw Interactions Dataset**
-
 <p>'user_id' : User ID <br>
 'recipe_id':Recipe ID <br>
 'date' : Date of interaction <br>
@@ -295,10 +294,11 @@ is not rating. 0.0 indicates that they strongly disliked the recipe which may no
 impact the average rating. <br>
 
 **'Rating' Missingness** <br>
-**Missingness of rating based on the number of steps**
+**Missingness of rating based on the number of steps** <br>
 
-Null Hypothesis<mark> : distribution of n_steps when rating is missing is the same as the distribution of the calories 
+Null Hypothesis : distribution of n_steps when rating is missing is the same as the distribution of the calories 
 when rating is not missing <br>
+
 Alternative Hypothesis - distribution n_steps is different when rating is missing and when rating is not <br>
 
 observed statistic- absolute diff between average n_steps of two distributions <br>
@@ -333,8 +333,10 @@ We conducted a permutation test 10000 times and found that the p_value to be 0.1
   height="400"
   frameborder="0"
 
+<br>
 
-**conclusion**
+
+**conclusion** <br>
 <pr>Because 0.178> 0.05, we fail to reject the hypothesis that there is a difference between the number of. This means that there is no significant difference in the average number of calories between fancier and regular recipes. This may be because we don't take into account the preparation 
 of the recipe and the type of ingredients. This can effect the amount of
 calories. <br>
