@@ -281,10 +281,9 @@ The observed absolute difference is 51.45. Most of the points are to the left of
 
 ---
 
-
-
-
 ## Hypothesis Testing <br>
+
+
 **Question: Do fancier recipes have a greater average amount of calories?** <br>
 
 fancy:
