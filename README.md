@@ -6,38 +6,9 @@ by Jasmine & Shekar
 
 ## Introduction
 
-For our analysis, we chose to explore what types of recipes tend to have the most recipes and predict the amount of calories in a given recipe. 
-Our analysis is helpful for readers who are looking for a recipe that fits their dietary goals. Our analysis is a great tool for readers who are looking for people looking to gain weight in the form of lean muscle mass or energy. Calories are units of energy that every individual needs for their body to function. 
+For our analysis, we chose to explore what types of recipes tend to have the most calories and predict the amount of calories in a given recipe. Our analysis is helpful for readers who are looking for a recipe that fits their dietary goals. Our analysis is a great tool for readers who are looking for people looking to gain weight in the form of lean muscle mass or energy. Calories are units of energy that every individual needs for their body to function. 
 
-The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contains recipes posted since 2008 
-
-
-**Cleaned Dataframe Columns** 
-
-| Columns      | Datatype|
- |:-------------|--------:|
-|id |  int64  | 
-| minutes      |  int64  | 
-|contributor_id|  int64  |
-| submitted    |  object |
-|  tags        |  object |
-|  tags        |  object |
-|  nutrition   |  object |
-
-
-| Columns      | Datatype|
- |:-------------|--------:|
-|id |  int64  | 
-| name      |  object  | 
-|minutes|  int64  |
-| contributor_id    |  int64 |
-|  submitted        |  datetime62[ns] |
-|  tags        |  object |
-|  nutrition   |  object |
-|  n_steps   |  object |
-|  steps   |  object |
-|  description   |  object |
-|  description   |  object |
+The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw_Recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contains recipes posted since 2008 
 
 
 | Columns      | Datatype|
@@ -77,7 +48,6 @@ description - user provided description
 
 **Raw Interactions Dataset** 
 
-
 'user_id' : User ID 
 'recipe_id':Recipe ID 
 'date' : Date of interaction 
@@ -93,12 +63,25 @@ Both of the dataframes have common columns id and recipe id. In order to keep al
 
 Since the id and recipe id match up, we dropped the recipe column beccause it is uneccesssary to have duplicate values
 
-The columns relevant to our question are protein, sugar, n_steps, minutes, sodium, saturated fat, minutes, total fat, sugar, and carbohydrates, recipe id. 
+The columns relevant to our question are protein, sugar, n_steps, minutes, sodium, saturated fat, minutes, total fat, sugar, and carbohydrates, recipe id. Those are the columns we focused on cleaning
 
 
+| Column Name   | Data Type   |
+|:--------------|:------------|
+| id            | int64       |
+| minutes       | int64       |
+| n_steps       | int64       |
+| n_ingredients | int64       |
+| calories      | float64     |
+| total_fat     | float64     |
+| sugar         | float64     |
+| sodium        | float64     |
+| protein       | float64     |
+| saturated fat | float64     |
+| carbohydrates | float64     |
 
 
-Relevant Columns
+Cleaned DataFrame and Data Type 
 
 |     id |   minutes |   n_steps |   n_ingredients |   calories |   total_fat |   sugar |   sodium |   protein |   saturated fat | carbohydrates |
 |-------:|----------:|----------:|----------------:|-----------:|------------:|--------:|---------:|----------:|----------------:|----------------:|
@@ -110,11 +93,32 @@ Relevant Columns
 
 
 
-
-
-
-
-
+| Column Name    | Data Type   |
+|:---------------|:------------|
+| name           | object      |
+| id             | int64       |
+| minutes        | int64       |
+| contributor_id | int64       |
+| submitted      | object      |
+| tags           | object      |
+| nutrition      | object      |
+| n_steps        | int64       |
+| steps          | object      |
+| description    | object      |
+| ingredients    | object      |
+| n_ingredients  | int64       |
+| user_id        | Int64       |
+| date_reviewed  | object      |
+| rating         | float64     |
+| review         | object      |
+| average_rating | float64     |
+| calories       | float64     |
+| total_fat      | float64     |
+| sugar          | float64     |
+| sodium         | float64     |
+| protein        | float64     |
+| saturated fat  | float64     |
+| carbohydrates  | float64     |
 
 
 **Extracting Nutrition Column** 
@@ -155,8 +159,9 @@ We looked at the relationship between number of steps
 and the amount of protein and the number of ingredients and the the number
 of steps and the number of ingredients <br>
 
-For the  number of steps and the amount of protein there seems no be no correlation and a weak relationship. There is an apparent outlier of4356 g of protein and 4 steps. The points are mainly clustered below 1000
+For the  number of steps and the amount of protein there seems no be no correlation and a weak relationship. There is an apparent outlier of 4356 g of protein and 4 steps. The points are mainly clustered below 1000
 g of protein. 
+
 
 
 
@@ -167,8 +172,6 @@ There is an appparent outlier at the point of 37 ingredients and 6 steps.
 
 **interesting aggregate**<br>
 The average,min, and max sugar content of a recipe based on the amount of steps in the recipe.<br>
-
-
 
 
 |   n_steps |   ('mean', 'sugar') |   ('max', 'sugar') |   ('min', 'sugar') |
@@ -196,7 +199,7 @@ There is more than one column that has nan values. However, columns with
 only one row of nan values don't have a significant impact on our 
 analysis. We assume that ratings of 0 are replaced with nan because it 
 may impact the average rating. Nan is not included when calculating mean.This
-is more appropriate in cases where the values are not known<br>
+is more appropriate in cases where the values are not known or the true rating is not actually bad<br>
 
 **'Rating' Missingness** <br>
 **Missingness of rating based on the number of steps** <br>
@@ -221,7 +224,7 @@ observed statistic- absolute difference between the average 'n_steps' when 'rati
 ></iframe>
 
 
-After conducting a permutation test to shuffle the missingness of rating 1000 times and get 1000 simulating results about the absolute difference, we got a p-value of
+After conducting a permutation test to shuffle the missingness of rating 1000 times and geting 1000 simulating results about the absolute difference, we got a p-value of
 0.0. Our significance level is 0.05. Because 0.0 < 0.05, we reject the null hypothesis that distribution of the n_steps when rating is missing is the same as the distribution of the minutes when rating is not missing. Based on our p-value and results, rating is MAR because it's missingness is dependent on the number of steps it takes to prepare the food.
 
 
