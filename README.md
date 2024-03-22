@@ -158,7 +158,7 @@ This is a count of n_ingredients
   frameborder="0"
 ></iframe>
 <br>
-The distribution has a bell shaped curve and is is skewed right. The max count is 7, meaning that most recipes has 7 steps. 
+The distribution has a bell shaped curve and is is skewed right. The max count is at 8. This means that most recipes has 8 steps. 
 
 
 **Bivariate Analysis**
@@ -184,7 +184,7 @@ This is the box plot of n_steps and n_ingredients
   frameborder="0"
 ></iframe>
 
-There are many apparent outliers. A general pattern is that as n_ingredients increases, the range of steps increases. The boxplate with the greatest range
+There are many apparent outliers. A general pattern is that as n_ingredients increases, the range of steps increases. The boxplot with the greatest range
 is at 30 ingredients. 
 
 
@@ -243,10 +243,10 @@ is more appropriate in cases where the values are not known or the true rating i
 
 
 After conducting a permutation test to shuffle the missingness of rating 1000 times and geting 1000 simulating results about the absolute difference, we got a p-value of
-0.0. Our significance level is 0.05. Because 0.0 < 0.05, we reject the null hypothesis that distribution of the n_steps when rating is missing is the same as the distribution of the minutes when rating is not missing. Based on our p-value and results, rating is MAR because it's missingness is dependent on the number of steps it takes to prepare the food.
+0.0. Our significance level is 0.05. Because 0.0 < 0.05, we reject the null hypothesis that the distribution of  n_steps when rating is missing is the same as the distribution of the minutes when rating is not missing. Based on our p-value and results, rating is MAR because it's missingness is dependent on the number of steps it takes to prepare the food.
 
 
-**Missingness of rating Based on Minutes** <br>
+**Missingness of Rating Based on Minutes** <br>
 *null hypothesis*: the distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating is not missing 
 
 *alternative hypothesis*: the distribution of the minutes when rating is missing is different from the distribution of the minutes when rating is not missing <br>
@@ -258,7 +258,8 @@ After conducting a permutation test to shuffle the missingness of rating 1000 ti
   height="400"
   frameborder="0"
 ></iframe>
-The observed test statistic is 1.8245243535429267
+
+The observed absolute difference is 51.45. Most of the points are to the left of the observed absolute difference point,
 
 <iframe
   src="assets/missingness1.html"
@@ -284,7 +285,7 @@ fancy:
 regular: 
   less than or equal to 15 ingredients<br>
 
-*null hypothesis*: There is no difference in the number of calories between recipes fancy  and regular ingredients <br>
+*null hypothesis*: There is no difference in the number of calories between fancy recipes  and regular recipes <br>
 
 *alternative hypothesis* : Fancier recipes have a greater average of calories
 than regular recipes <br>
@@ -296,6 +297,17 @@ Since we are dealing with numerical values:
 boolean statements of whether the recipe needs more than in 10 ingredients.
 We also included another column called 'shuffled_ingred_gt_10' to shuffle 
 our values and conduct a permutation test. <br>
+
+|   calories |   n_ingredients | ingred_gt_10   | shuffled_ingred_gt_10   |
+|-----------:|----------------:|:---------------|:------------------------|
+|      138.4 |               9 | False          | False                   |
+|      595.1 |              11 | False          | False                   |
+|      194.8 |               9 | False          | False                   |
+|      194.8 |               9 | False          | False                   |
+|      194.8 |               9 | False          | False                   |
+
+
+
 
 We conducted a permutation test 10000 times and found that the p_value to be 0.178 with a significance level of  0.05 <br>
 
@@ -311,9 +323,8 @@ We conducted a permutation test 10000 times and found that the p_value to be 0.1
 
 
 **conclusion** <br>
-<pr>Because 0.178> 0.05, we fail to reject the hypothesis that there is a difference between the number of. This means that there is no significant difference in the average number of calories between fancier and regular recipes. There are many factors that contribute to calories of a recipe. This may include the preparation process
-of the recipe and the type of ingredients it is made of. This can effect the amount of calories in a recipe
-calories. <br>
+<pr>Because 0.178> 0.05, we fail to reject the hypothesis that there is a difference between the number of calories in fancy and regular recipes. This means that there is no significant difference in the average number of calories between fancier and regular recipes. There are many factors that can contribute to calories of a recipe. This may include the preparation process
+of the recipe and the type of ingredients it is made of. This can effect the amount of calories in a recipe. <br>
 
 ---
 
