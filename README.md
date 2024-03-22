@@ -88,6 +88,7 @@ The columns relevant to our question are ['id','minutes','n_steps','n_ingredient
 | Column Name    | Data Type   |
 |:---------------|:------------|
 | minutes        | int64       |
+| id             | int64       |
 | n_steps        | int64       |
 | n_ingredients  | int64       |
 | calories       | float64     |
@@ -104,7 +105,7 @@ The columns relevant to our question are ['id','minutes','n_steps','n_ingredient
 
 
 
-
++
 **The whole Dataframe data type**
 
 | Column Name    | Data Type   |
