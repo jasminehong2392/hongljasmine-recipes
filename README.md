@@ -322,9 +322,9 @@ We conducted a permutation test 10000 times and found that the p_value to be 0.1
 
 <br>
 
-**conclusion** <br>
+**conclusion** 
 <pr>Because 0.178> 0.05, we fail to reject the hypothesis that there is a difference between the number of calories in fancy and regular recipes. This means that there is no significant difference in the average number of calories between fancier and regular recipes. There are many factors that can contribute to calories of a recipe. This may include the preparation process
-of the recipe and the type of ingredients it is made of. This can effect the amount of calories in a recipe. <br>
+of the recipe and the type of ingredients it is made of. This can effect the amount of calories in a recipe. 
 
 
 
@@ -332,20 +332,20 @@ of the recipe and the type of ingredients it is made of. This can effect the amo
 
 
 ---
-## Framing a Prediction Problem <br>
+## Framing a Prediction Problem 
 
-**Question: Can we Predict the Rating of a Recipe?** <br>
-<pr>
-What we wanted to do was create a machine learning model that would use other variables available to us in the data to estimate how good a meal was. Since food is very subjective and varies from person to person, we figured that there must be other ways besides a rating to tell if a recipe is going to turn out well. A rating is the best way to guess this, but other factors must contribute a role to how good the food is. We wanted to engineer an algorithm that gives us a pretty good prediction of the rating, and a regression was the best way of doing this. We will be able to use any column in the dataframe for our model except the rating of course. The test statistic to be chosen is R^2. For our model, the test statistic chosen is r^2. This makes sense and it what we want since we want a correlation coefficient of how accurate our model can get when predicting the rating scores of given recipes. The correlation coefficient will determine how similar the data points on our training are to the test set. <br>
+**Question: Can we Predict the Rating of a Recipe?** 
 
----
-## Baseline Model <br>
-<pr>
-Our model is a DecisionTree Regression model with 20 steps. We later change this to 174 steps after tuning the hyperparameter, but in my base model it is 20. We only have a few features right now which are minutes, and all the nutrition. we are using a quantile transformer on the minutes column, and a standard scaler on all the nutrition info like calories, sugar, sodium, protein, etc. All the data we have in this model right now, 8 variables and 2 features, is quantitative. They are all numbers which allows me to use simple transformers on them without any encoding. In the final model, we have 2 more quantitative variables which are the number of ingredients and the number of steps, but we also have 2 columns of nominal data, which are ingredients and reviews. These are nominal since they are categorical data that cannot be ordered. In the final model, we convert this into quantitative data that we can use by identifying if certain key terms is in the data. Right now, my model is not good. We only have 2 features which produce an absolute value R^2 score of only 0.12. This does not show any correlation and my model cannot predict the scores at this point. <br>
+What we wanted to do was create a machine learning model that would use other variables available to us in the data to estimate how good a meal was. Since food is very subjective and varies from person to person, we figured that there must be other ways besides a rating to tell if a recipe is going to turn out well. A rating is the best way to guess this, but other factors must contribute a role to how good the food is. We wanted to engineer an algorithm that gives us a pretty good prediction of the rating, and a regression was the best way of doing this. We will be able to use any column in the dataframe for our model except the rating of course. The test statistic to be chosen is R^2. For our model, the test statistic chosen is r^2. This makes sense and it what we want since we want a correlation coefficient of how accurate our model can get when predicting the rating scores of given recipes. The correlation coefficient will determine how similar the data points on our training are to the test set. 
 
 ---
-## Final Model <br>
-<pr>
+## Baseline Model 
+
+Our model is a DecisionTree Regression model with 20 steps. We later change this to 174 steps after tuning the hyperparameter, but in my base model it is 20. We only have a few features right now which are minutes, and all the nutrition. we are using a quantile transformer on the minutes column, and a standard scaler on all the nutrition info like calories, sugar, sodium, protein, etc. All the data we have in this model right now, 8 variables and 2 features, is quantitative. They are all numbers which allows me to use simple transformers on them without any encoding. In the final model, we have 2 more quantitative variables which are the number of ingredients and the number of steps, but we also have 2 columns of nominal data, which are ingredients and reviews. These are nominal since they are categorical data that cannot be ordered. In the final model, we convert this into quantitative data that we can use by identifying if certain key terms is in the data. Right now, my model is not good. We only have 2 features which produce an absolute value R^2 score of only 0.12. This does not show any correlation and my model cannot predict the scores at this point. 
+
+---
+## Final Model 
+
 We chose a Decision Tree Regressive model since there was a lot of data, and Decision Trees are relatively fast at sifting through a lot of data and a lot of variables. They make good and fast choices about using certain features, meaning they are ideal for what we wanted to do.
 
 The features we included in my model are: all of the nutrition info. we included this simply because the data was available. Each category in the nutrition doesn't affect the model too much, but at the end of the day, this is a huge bulk of data and it makes sense why rating would be affected by the nutrition info. Meals that are tastier (have more sugar and fat) may get a better review. Since we just wanted to include this data in out model, but we were not sure the relationship of each category, we just used the standard scaler transformer. 
@@ -360,11 +360,12 @@ Since we applied different transformers to different columns, we used a column t
 
 We tuned the max depth hyper parameter for the decision tree and iteratively ran a for loop to get the best max-depth. We simply just ran a for loop, creating and scoring each pipeline for each max depth value, ranging from 1 to 200. 200 iterations was a bit extra, especially because it took a while to run, but we wanted to be as accurate as possible.
 
-Compared to our original model, our final model is much better. With an average absolute value test R^2 score of around 0.65, our model is much better at predicting the rating of recipes. This means that there is a trend that we are able to slightly generate with our model. As opposed to our original model which was not accurate at all, our final model incorporates more features and is able to predict data better<br>
+Compared to our original model, our final model is much better. With an average absolute value test R^2 score of around 0.65, our model is much better at predicting the rating of recipes. This means that there is a trend that we are able to slightly generate with our model. As opposed to our original model which was not accurate at all, our final model incorporates more features and is able to predict data better
+
 
 ---
-## Fairness Analysis <br>
-<pr>
+## Fairness Analysis 
+
 
 Does the model fairly predict a recipe's rating, even considering the average rating of the contributor. Some recipe contributors are very good chefs, and make a lot of very good meals. Do better chefs more consistently make certain kinds of meals, do they make more sporatic recipes, or is there no difference between the recipes that good and bad chefs make. For simplicity, we will refer to these people as bad and good chefs. Bad chefs have an average rating of below 4.5, and good chefs have an average rating of 4.5 and above.
 
@@ -386,6 +387,5 @@ p - value = 0.12
 
 Since the p value is much greater than our significance level, we fail to reject the null hypothesis. This means that the model predicts the rating of chefs with good accuracy, regardless of their average rating. This makes sense because our model uses a lot of different features to predict recipe rating. Although, the average rating of a chef does likely matter a little bit since they are more prone to making better recipes, our model is fair enough.
 
-<br>
 ---
 
