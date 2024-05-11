@@ -285,7 +285,7 @@ The observed absolute difference is 51.45. Most of the points are to the left of
 
 
 ---
-## Hypothesis Testing <br>
+## Hypothesis Testing
 
 
 **Question: Do fancier recipes have a greater average amount of calories?** <br>
@@ -322,9 +322,9 @@ We conducted a permutation test 10000 times and found that the p_value to be 0.1
 
 <br>
 
-**conclusion** 
+**conclusion** <br>
 <pr>Because 0.178> 0.05, we fail to reject the hypothesis that there is a difference between the number of calories in fancy and regular recipes. This means that there is no significant difference in the average number of calories between fancier and regular recipes. There are many factors that can contribute to calories of a recipe. This may include the preparation process
-of the recipe and the type of ingredients it is made of. This can effect the amount of calories in a recipe. 
+of the recipe and the type of ingredients it is made of. This can effect the amount of calories in a recipe. <br>
 
 
 
@@ -334,9 +334,9 @@ of the recipe and the type of ingredients it is made of. This can effect the amo
 ---
 ## Framing a Prediction Problem 
 
-**Question: Can we Predict the Rating of a Recipe?** 
+**Question: Can we Predict the Rating of a Recipe?** <br>
 
-What we wanted to do was create a machine learning model that would use other variables available to us in the data to estimate how good a meal was. Since food is very subjective and varies from person to person, we figured that there must be other ways besides a rating to tell if a recipe is going to turn out well. A rating is the best way to guess this, but other factors must contribute a role to how good the food is. We wanted to engineer an algorithm that gives us a pretty good prediction of the rating, and a regression was the best way of doing this. We will be able to use any column in the dataframe for our model except the rating of course. The test statistic to be chosen is R^2. For our model, the test statistic chosen is r^2. This makes sense and it what we want since we want a correlation coefficient of how accurate our model can get when predicting the rating scores of given recipes. The correlation coefficient will determine how similar the data points on our training are to the test set. 
+What we wanted to do was create a machine learning model that would use other variables available to us in the data to estimate how good a meal was. Since food is very subjective and varies from person to person, we figured that there must be other ways besides a rating to tell if a recipe is going to turn out well. A rating is the best way to guess this, but other factors must contribute a role to how good the food is. We wanted to engineer an algorithm that gives us a pretty good prediction of the rating, and a regression was the best way of doing this. We will be able to use any column in the dataframe for our model except the rating of course. The test statistic to be chosen is R^2. For our model, the test statistic chosen is r^2. This makes sense and it what we want since we want a correlation coefficient of how accurate our model can get when predicting the rating scores of given recipes. The correlation coefficient will determine how similar the data points on our training are to the test set. <br>
 
 ---
 ## Baseline Model 
