@@ -4,6 +4,7 @@
 by Jasmine & Shekar 
 
 ---
+[download]({{ site.baseurl }}{% link file.txt %})
 
 ## Introduction
 
