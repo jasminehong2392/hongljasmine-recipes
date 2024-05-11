@@ -4,7 +4,7 @@
 by Jasmine & Shekar 
 
 ---
-[myFile.js]({{file name='myFile.js'}})
+<a href="file.txt">Download File</a>
 
 ## Introduction
 
