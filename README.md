@@ -4,7 +4,7 @@
 by Jasmine & Shekar 
 
 ---
-[download]({https://jasminehong2392.github.io/jasmineshekar-recipes/}{% link file.txt %})
+[myFile.js]({{file name='myFile.js'}})
 
 ## Introduction
 
