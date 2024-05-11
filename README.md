@@ -4,13 +4,12 @@
 by Jasmine & Shekar 
 
 ---
-<a href="file.txt">Download File</a>
 
 ## Introduction
 
 Our analysis explores which types of recipes are more likely to be high in calories and to predict recipe ratings. This information is valuable for individuals seeking tasty recipes that align with their dietary goals. By identifying these trends, we provide a useful tool for those looking for flavorful recipes that are also within their calorie limits. Calories are essential units of energy required for bodily functions.Our analysis helps people find diet-friendly and tasty recipes."
 
-The two csv datasets we are working with are Raw Recipes and Raw Interactions. Raw_Recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes.There are 82782 rows and 12 columns in the Recipe dataset. Each row is a unique recipe. There are  731927 rows and 5 columns in Raw_interactions. Each row is a review left by a user.Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contain data posted since 2008 
+The two csv datasets we are working with are Raw Recipes and Raw Interactions. You can find the original data [here](https://drive.google.com/file/d/10ZrymmO0Rc_k6zz4dlyftmeMU-altyyJ/view?usp=sharing). Raw_Recipes contains recipes and Raw_interactions contains the reviews and ratings submitted for the recipes in RAW_recipes.There are 82782 rows and 12 columns in the Recipe dataset. Each row is a unique recipe. There are  731927 rows and 5 columns in Raw_interactions. Each row is a review left by a user. Both of the recipes are from Food.com.Food.com is a digital brand and media platform that features a large collection of recipes that are submitted, rated, and reviewed by foodies including home cooks, celebrity chefs, and shows. These data sets only contain data posted since 2008 
 
 
 
