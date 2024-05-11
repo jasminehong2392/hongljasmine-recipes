@@ -4,7 +4,7 @@
 by Jasmine & Shekar 
 
 ---
-[download]({{ site.baseurl }}{% link file.txt %})
+[download]({https://jasminehong2392.github.io/jasmineshekar-recipes/}{% link file.txt %})
 
 ## Introduction
 
