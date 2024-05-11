@@ -330,6 +330,7 @@ of the recipe and the type of ingredients it is made of. This can effect the amo
 
 
 ---
+
 ## Framing a Prediction Problem 
 
 **Question: Can we Predict the Rating of a Recipe?** <br>
