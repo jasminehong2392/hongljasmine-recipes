@@ -279,7 +279,7 @@ The observed absolute difference is 51.45. Most of the points are to the left of
 ></iframe>
 
 <p> After conducting a permutation test to shuffle the missingness of rating 1000 times and 1000 simulating results about the absolute difference, we got a p-value of
-0.117. Our significance level is 0.05. Because 0.117> 0.05, we fail to reject the null hypothesis that the distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating is not missing. Based on our p-value and results, rating is MCAR because it's missingness is not dependent on the amount of minutes it takes to prepare the food. <br> 
+0.117. Our significance level is 0.05. Because 0.117> 0.05, we fail to reject the null hypothesis that the distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating is not missing. Based on our p-value and results, rating is MCAR because it's missingness is not dependent on the amount of minutes it takes to prepare the food. <p> 
 
 ---
 
@@ -287,24 +287,20 @@ The observed absolute difference is 51.45. Most of the points are to the left of
 
 **Question: Do fancier recipes have a greater average amount of calories?** <br>
 
-fancy:
-  more than 15 ingredients<br>
-regular: 
-  less than or equal to 15 ingredients<br>
+fancy: more than 15 ingredients<br>
+regular: less than or equal to 15 ingredients<br>
 
 *null hypothesis*: There is no difference in the number of calories between fancy recipes  and regular recipes <br>
 
-*alternative hypothesis* : Fancier recipes have a greater average of calories
-than regular recipes <br>
+*alternative hypothesis* : Fancier recipes have a greater average of calories than regular recipes <br>
 
 Since we are dealing with numerical values: 
 *observed test statistic* : The observed difference between the average number of calors of fancier and regular recipes. <br>
 
-<p>We decided to create a new column called 'ingred_gt_10' that includes
+<p> We decided to create a new column called 'ingred_gt_10' that includes
 boolean statements of whether the recipe needs more than in 10 ingredients.
 We also included another column called 'shuffled_ingred_gt_10' to shuffle 
 our values and conduct a permutation test. <br>
-
 
 
 We conducted a permutation test 10000 times and found that the p_value to be 0.178 with a significance level of  0.05 <br>
