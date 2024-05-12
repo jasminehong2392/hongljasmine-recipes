@@ -320,8 +320,8 @@ We conducted a permutation test 10000 times and found that the p_value to be 0.1
 <br>
 
 **conclusion** <br>
-<pr>Because 0.178> 0.05, we fail to reject the hypothesis that there is a difference between the number of calories in fancy and regular recipes. This means that there is no significant difference in the average number of calories between fancier and regular recipes. There are many factors that can contribute to calories of a recipe. This may include the preparation process
-of the recipe and the type of ingredients it is made of. This can effect the amount of calories in a recipe. <br>
+Because 0.178> 0.05, we fail to reject the hypothesis that there is a difference between the number of calories in fancy and regular recipes. This means that there is no significant difference in the average number of calories between fancier and regular recipes. There are many factors that can contribute to calories of a recipe. This may include the preparation process
+of the recipe and the type of ingredients it is made of. This can effect the amount of calories in a recipe. 
 
 
 ---
