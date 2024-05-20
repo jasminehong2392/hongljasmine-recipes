@@ -48,9 +48,11 @@ The two csv datasets we are working with are Raw Recipes and Raw Interactions. Y
 'review' : Review text 
 
 **Average Rating**
+
 We created an extra column with the average rating of recipes. This is useful in order to build our model and predict the ratings of foods. 
 
 **Merged Datframe**
+
 Both of the dataframes have common columns id and recipe id. In order to keep all the recipes, we merged left the two dateferames to show the corresponding rating and review for each unique recipe. 
 
 
@@ -59,11 +61,13 @@ Both of the dataframes have common columns id and recipe id. In order to keep al
 Since the id and recipe id match up, we dropped the recipe column beccause it is uneccesssary to have duplicate values
 
 **Ingredients Testing**
+
 We decided to add an extra column ingredients_gt_10 to our data frame to perform our hypothesis test. This column 
 generates boolean statements where it returns true if the recipe has more than 15 ingredients and false if less than ingredients.
 Therefore, we can differentiate between fancy and regular recipes and see if theres a different of calories. 
 
 **Extracting Nutrition Column** 
+
 We discovered that the values in the list are actually strings. 
 As a result, we converted the values into a list of floats and created individual columns for each value in the list. The added columns are 
 calories, total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV) with float data type<br>
@@ -143,6 +147,7 @@ The columns relevant to our question are ['id','minutes','n_steps','n_ingredient
 
 
 **Univariate Analysis**
+
 We looked at the distribution of number of steps('n_steps') and 
 the distribution of number of ingredients('n_ingredients') 
 
@@ -171,6 +176,7 @@ The distribution has a bell shaped curve and is is skewed right. The max count i
 
 
 **Bivariate Analysis**
+
 We looked at the relationship between number of steps
 and the amount of protein and the number of ingredients and the the number
 of steps and the number of ingredients
@@ -197,6 +203,7 @@ is at 30 ingredients.
 
 
 **interesting aggregate**
+
 The average, min, and max sugar content of a recipe based on the amount of steps in the recipe.
 
 
@@ -215,6 +222,7 @@ The average, min, and max sugar content of a recipe based on the amount of steps
 ## Assessment of Missingness
 
 **Missingness of 'Description'** 
+
 The column 'description' is NMAR because the user might have submitted
 the recipe on a mobile device like an Iphone. Since it's a smaller screen, it's harder to write out a description. As a result, it takes more time to
 write one. Therefore, the individual may choose not to include a description
@@ -255,6 +263,7 @@ After conducting a permutation test to shuffle the missingness of rating 1000 ti
 
 
 **Missingness of Rating Based on Minutes** 
+
 *null hypothesis*: the distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating is not missing 
 
 *alternative hypothesis*: the distribution of the minutes when rating is missing is different from the distribution of the minutes when rating is not missing 
