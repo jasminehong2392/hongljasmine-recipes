@@ -1,7 +1,7 @@
 
 # COOKIN CALORIES
 
-by Jasmine & Shekar  2
+by Jasmine & Shekar  
 
 ---
 
