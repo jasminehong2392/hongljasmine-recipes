@@ -19,7 +19,9 @@ The two csv datasets we are working with are Raw Recipes and Raw Interactions. Y
 
 **Recipes Dataset**
 
-<p>'name' : Recipe Name <br>
+<p>
+
+'name' : Recipe Name <br>
 'id' : Recipe ID <br>
 'minutes' : minutes to prepare recipe <br>
 'contributor_id' : user id who submitted recipe <br>
@@ -105,8 +107,6 @@ The columns relevant to our question are ['id','minutes','n_steps','n_ingredient
 
 
 
-
-
 +
 **The whole Dataframe data type**
 
@@ -146,8 +146,7 @@ The columns relevant to our question are ['id','minutes','n_steps','n_ingredient
 We looked at the distribution of number of steps('n_steps') and 
 the distribution of number of ingredients('n_ingredients') 
 
-This is a distribution of the number of steps in recipes.The distributionn has a bell shaped curved and is skewed right  with the max count of n_steps being 7. This means that most recipes have 
-7 steps .
+This is a distribution of the number of steps in recipes.The distributionn has a bell shaped curved and is skewed right  with the max count of n_steps being 7. This means that most recipes have 7 steps .
 
 <br>
 
@@ -165,14 +164,16 @@ This is a count of n_ingredients
   height="400"
   frameborder="0"
 ></iframe>
+
 <br>
+
 The distribution has a bell shaped curve and is is skewed right. The max count is at 8. This means that most recipes has 8 steps. 
 
 
 **Bivariate Analysis**
 We looked at the relationship between number of steps
 and the amount of protein and the number of ingredients and the the number
-of steps and the number of ingredients <br>
+of steps and the number of ingredients
 
 For the  number of steps and the amount of protein there seems no be no correlation and a weak relationship. There is an apparent outlier of 4356  of protein and 4 steps. The points are mainly clustered below 1000 for protein. 
 
@@ -182,7 +183,6 @@ For the  number of steps and the amount of protein there seems no be no correlat
   height="400"
   frameborder="0"
 ></iframe>
-
 
 This is the box plot of n_steps and n_ingredients
 <iframe
@@ -196,8 +196,8 @@ There are many apparent outliers. A general pattern is that as n_ingredients inc
 is at 30 ingredients. 
 
 
-**interesting aggregate**<br>
-The average,min, and max sugar content of a recipe based on the amount of steps in the recipe.<br>
+**interesting aggregate**
+The average, min, and max sugar content of a recipe based on the amount of steps in the recipe.
 
 
 |   n_steps |   ('mean', 'sugar') |   ('max', 'sugar') |   ('min', 'sugar') |
@@ -214,24 +214,23 @@ The average,min, and max sugar content of a recipe based on the amount of steps 
 
 ## Assessment of Missingness
 
-**Missingness of 'Description'** <br>
+**Missingness of 'Description'** 
 The column 'description' is NMAR because the user might have submitted
 the recipe on a mobile device like an Iphone. Since it's a smaller screen, it's harder to write out a description. As a result, it takes more time to
-write one. Therefore, the individual may choose not to include a description<br>
+write one. Therefore, the individual may choose not to include a description
 
-'Description' can become a MAR missingness if we add a new column with boolean statements of whether or not they are on a mobile device. There may be no description if the value is true. <br>
+'Description' can become a MAR missingness if we add a new column with boolean statements of whether or not they are on a mobile device. There may be no description if the value is true.
 
 There is more than one column that has nan values. However, columns with 
 only one row of nan values don't have a significant impact on our 
 analysis. We assume that ratings of 0 are replaced with nan because it 
 may impact the average rating. Nan is not included when calculating mean.This
-is more appropriate in cases where the values are not known or the true rating is not actually bad<br>
+is more appropriate in cases where the values are not known or the true rating is not actually bad
 
 
-**Missingness of rating based on the number of steps** <br>
+**Missingness of rating based on the number of steps** 
 
-*null Hypothesis* : The distribution of 'n_steps' when 'rating' is missing is the same as the distribution of 'n_steps' when 'rating' is not missing.
- <br>
+*null Hypothesis* : The distribution of 'n_steps' when 'rating' is missing is the same as the distribution of 'n_steps' when 'rating' is not missing. <br>
 *alternative Hypothesis* - The distribution of 'n_steps' is different when 'rating' is missing compared to when 'rating' is not missing. <br>
 *observed statistic* - absolute difference between the average 'n_steps' when 'rating' is missing and the average 'n_steps' when 'rating' is not missing. <br>
 
@@ -252,15 +251,14 @@ The mean is about the same because they are both cerntered around the same place
 ></iframe>
 
 
-After conducting a permutation test to shuffle the missingness of rating 1000 times and geting 1000 simulating results about the absolute difference, we got a p-value of
-0.0. Our significance level is 0.05. Because 0.0 < 0.05, we reject the null hypothesis that the distribution of  n_steps when rating is missing is the same as the distribution of the minutes when rating is not missing. Based on our p-value and results, rating is MAR because it's missingness is dependent on the number of steps it takes to prepare the food.
+After conducting a permutation test to shuffle the missingness of rating 1000 times and geting 1000 simulating results about the absolute difference, we got a p-value of 0.0. Our significance level is 0.05. Because 0.0 < 0.05, we reject the null hypothesis that the distribution of  n_steps when rating is missing is the same as the distribution of the minutes when rating is not missing. Based on our p-value and results, rating is MAR because it's missingness is dependent on the number of steps it takes to prepare the food.
 
 
-**Missingness of Rating Based on Minutes** <br>
+**Missingness of Rating Based on Minutes** 
 *null hypothesis*: the distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating is not missing 
 
-*alternative hypothesis*: the distribution of the minutes when rating is missing is different from the distribution of the minutes when rating is not missing <br>
-*observed statistic*: the absolute difference between minutes mean of these two distributions. <br>
+*alternative hypothesis*: the distribution of the minutes when rating is missing is different from the distribution of the minutes when rating is not missing 
+*observed statistic*: the absolute difference between minutes mean of these two distributions. 
 
 <iframe
   src="assets/missingness2.html"
@@ -278,32 +276,31 @@ The observed absolute difference is 51.45. Most of the points are to the left of
   frameborder="0"
 ></iframe>
 
-<p> After conducting a permutation test to shuffle the missingness of rating 1000 times and 1000 simulating results about the absolute difference, we got a p-value of
-0.117. Our significance level is 0.05. Because 0.117> 0.05, we fail to reject the null hypothesis that the distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating is not missing. Based on our p-value and results, rating is MCAR because it's missingness is not dependent on the amount of minutes it takes to prepare the food. <p> 
+<p> After conducting a permutation test to shuffle the missingness of rating 1000 times and 1000 simulating results about the absolute difference, we got a p-value of 0.117. Our significance level is 0.05. Because 0.117> 0.05, we fail to reject the null hypothesis that the distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating is not missing. Based on our p-value and results, rating is MCAR because it's missingness is not dependent on the amount of minutes it takes to prepare the food. <p> 
 
 ---
 
 ## Hypothesis Testing
 
-**Question: Do fancier recipes have a greater average amount of calories?** <br>
+**Question: Do fancier recipes have a greater average amount of calories?** 
 
-fancy: more than 15 ingredients<br>
-regular: less than or equal to 15 ingredients<br>
+fancy: more than 15 ingredients 
+regular: less than or equal to 15 ingredients 
 
-*null hypothesis*: There is no difference in the number of calories between fancy recipes  and regular recipes <br>
+*null hypothesis*: There is no difference in the number of calories between fancy recipes  and regular recipes
 
-*alternative hypothesis* : Fancier recipes have a greater average of calories than regular recipes <br>
+*alternative hypothesis* : Fancier recipes have a greater average of calories than regular recipes 
 
 Since we are dealing with numerical values: 
-*observed test statistic* : The observed difference between the average number of calors of fancier and regular recipes. <br>
+*observed test statistic* : The observed difference between the average number of calors of fancier and regular recipes.
 
-<p> We decided to create a new column called 'ingred_gt_10' that includes
+We decided to create a new column called 'ingred_gt_10' that includes
 boolean statements of whether the recipe needs more than in 10 ingredients.
 We also included another column called 'shuffled_ingred_gt_10' to shuffle 
-our values and conduct a permutation test. <br>
+our values and conduct a permutation test.
 
 
-We conducted a permutation test 10000 times and found that the p_value to be 0.178 with a significance level of  0.05 <br>
+We conducted a permutation test 10000 times and found that the p_value to be 0.178 with a significance level of  0.05 
 
 
 <iframe
@@ -313,11 +310,9 @@ We conducted a permutation test 10000 times and found that the p_value to be 0.1
   frameborder="0"
 ></iframe>
 
-<br>
 
 **conclusion** 
-Because 0.178> 0.05, we fail to reject the hypothesis that there is a difference between the number of calories in fancy and regular recipes. This means that there is no significant difference in the average number of calories between fancier and regular recipes. There are many factors that can contribute to calories of a recipe. This may include the preparation process
-of the recipe and the type of ingredients it is made of. This can effect the amount of calories in a recipe. 
+Because 0.178> 0.05, we fail to reject the hypothesis that there is a difference between the number of calories in fancy and regular recipes. This means that there is no significant difference in the average number of calories between fancier and regular recipes. There are many factors that can contribute to calories of a recipe. This may include the preparation process of the recipe and the type of ingredients it is made of. This can effect the amount of calories in a recipe. 
 
 
 ---
@@ -332,11 +327,10 @@ What we wanted to do was create a machine learning model that would use other va
 
 ## Baseline Model 
 
-Our model is a DecisionTree Regression model with 20 steps. We later change this to 174 steps after tuning the hyperparameter, but in my base model it is 20. We only have a few features right now which are minutes, and all the nutrition. we are using a quantile transformer on the minutes column, and a standard scaler on all the nutrition info like calories, sugar, sodium, protein, etc. All the data we have in this model right now, 8 variables and 2 features, is quantitative. They are all numbers which allows me to use simple transformers on them without any encoding. In the final model, we have 2 more quantitative variables which are the number of ingredients and the number of steps, but we also have 2 columns of nominal data, which are ingredients and reviews. These are nominal since they are categorical data that cannot be ordered. In the final model, we convert this into quantitative data that we can use by identifying if certain key terms is in the data. Right now, my model is not good. We only have 2 features which produce an absolute value R^2 score of only 0.12. This does not show any correlation and my model cannot predict the scores at this point. 
-
-
+Our model is a DecisionTree Regression model with 20 steps. We later change this to 174 steps after tuning the hyperparameter, but in my base model it is 20. We only have a few features right now which are minutes, and all the nutrition. we are using a quantile transformer on the minutes column, and a standard scaler on all the nutrition info like calories, sugar, sodium, protein, etc. All the data we have in this model right now, 8 variables and 2 features, is quantitative. They are all numbers which allows me to use simple transformers on them without any encoding. In the final model, we have 2 more quantitative variables which are the number of ingredients and the number of steps, but we also have 2 columns of nominal data, which are ingredients and reviews. These are nominal since they are categorical data that cannot be ordered. In the final model, we convert this into quantitative data that we can use by identifying if certain key terms is in the data. Right now, my model is not good. We only have 2 features which produce an absolute value R^2 score of only 0.12. This does not show any correlation and my model cannot predict the scores at this point. <br>
 
 ---
+
 ## Final Model
 
 We chose a Decision Tree Regressive model since there was a lot of data, and Decision Trees are relatively fast at sifting through a lot of data and a lot of variables. They make good and fast choices about using certain features, meaning they are ideal for what we wanted to do.
@@ -355,8 +349,8 @@ We tuned the max depth hyper parameter for the decision tree and iteratively ran
 
 Compared to our original model, our final model is much better. With an average absolute value test R^2 score of around 0.65, our model is much better at predicting the rating of recipes. This means that there is a trend that we are able to slightly generate with our model. As opposed to our original model which was not accurate at all, our final model incorporates more features and is able to predict data better
 
-
 ---
+
 ## Fairness Analysis
 
 
