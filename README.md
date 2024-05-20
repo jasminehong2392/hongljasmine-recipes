@@ -326,13 +326,13 @@ What we wanted to do was create a machine learning model that would use other va
 
 ---
 
-## Baseline Model 
+## Creating a Regression Model
+
+***Baseline Model***
 
 Our model is a DecisionTree Regression model with 20 steps. We later change this to 174 steps after tuning the hyperparameter, but in my base model it is 20. We only have a few features right now which are minutes, and all the nutrition. we are using a quantile transformer on the minutes column, and a standard scaler on all the nutrition info like calories, sugar, sodium, protein, etc. All the data we have in this model right now, 8 variables and 2 features, is quantitative. They are all numbers which allows me to use simple transformers on them without any encoding. In the final model, we have 2 more quantitative variables which are the number of ingredients and the number of steps, but we also have 2 columns of nominal data, which are ingredients and reviews. These are nominal since they are categorical data that cannot be ordered. In the final model, we convert this into quantitative data that we can use by identifying if certain key terms is in the data. Right now, my model is not good. We only have 2 features which produce an absolute value R^2 score of only 0.12. This does not show any correlation and my model cannot predict the scores at this point. <br>
 
----
-
-## Final Model
+***Final Model***
 
 We chose a Decision Tree Regressive model since there was a lot of data, and Decision Trees are relatively fast at sifting through a lot of data and a lot of variables. They make good and fast choices about using certain features, meaning they are ideal for what we wanted to do.
 
@@ -352,8 +352,7 @@ Compared to our original model, our final model is much better. With an average 
 
 ---
 
-## Fairness Analysis
-
+***Fairness Analysis***
 
 Does the model fairly predict a recipe's rating, even considering the average rating of the contributor. Some recipe contributors are very good chefs, and make a lot of very good meals. Do better chefs more consistently make certain kinds of meals, do they make more sporatic recipes, or is there no difference between the recipes that good and bad chefs make. For simplicity, we will refer to these people as bad and good chefs. Bad chefs have an average rating of below 4.5, and good chefs have an average rating of 4.5 and above.
 
