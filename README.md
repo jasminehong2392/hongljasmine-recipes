@@ -276,9 +276,10 @@ The observed absolute difference is 51.45. Most of the points are to the left of
   frameborder="0"
 ></iframe>
 
-<p> After conducting a permutation test to shuffle the missingness of rating 1000 times and 1000 simulating results about the absolute difference, we got a p-value of 0.117. Our significance level is 0.05. Because 0.117> 0.05, we fail to reject the null hypothesis that the distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating is not missing. Based on our p-value and results, rating is MCAR because it's missingness is not dependent on the amount of minutes it takes to prepare the food. <p> 
+<p> After conducting a permutation test to shuffle the missingness of rating 1000 times and 1000 simulating results about the absolute difference, we got a p-value of 0.117. Our significance level is 0.05. Because 0.117> 0.05, we fail to reject the null hypothesis that the distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating is not missing. Based on our p-value and results, rating is MCAR because it's missingness is not dependent on the amount of minutes it takes to prepare the food. </p> 
 
 ---
+
 
 ## Hypothesis Testing
 
